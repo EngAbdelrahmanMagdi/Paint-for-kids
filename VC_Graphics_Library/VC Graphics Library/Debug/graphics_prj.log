@@ -1,0 +1,4 @@
+﻿cl : Command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  Skipping... (no relevant changes detected)
+  demo.cpp
+  graphics_prj.vcxproj -> D:\cpp\CIE202-Proj-S2018- A\VC_Graphics_Library\VC Graphics Library\.\Debug\graphics_prj.exe
