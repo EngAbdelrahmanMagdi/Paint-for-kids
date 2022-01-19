@@ -18,25 +18,29 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 	//Note: Items are ordered here as they appear in menu
 	//If you want to change the menu items order, change the order here
 	ITM_SQUR,		//Square item in menu
-	ITM_ELPS,		//Ellipse item in menu
-	
-	//TODO: Add more items names here
+	ITM_ELPS,
+	ITM_HEXAGON,
+	ITM_Select,
 
-	ITM_EXIT,		//Exit item
-	
-	DRAW_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
-	
+	//Ellipse item in menu
+
+//TODO: Add more items names here
+
+ITM_EXIT,		//Exit item
+
+DRAW_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
+
 };
 
 enum PlayMenuItem //The items of the Play menu (you should add more items)
 {
 	//Note: Items are ordered here as they appear in menu
 	//If you want to change the menu items order, change the order here
-	
+
 	//TODO: Add more items names here
 
 	PLAY_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
-	
+
 };
 
 
@@ -48,13 +52,13 @@ __declspec(selectany) //This line to prevent "redefinition error"
 struct UI_Info	//User Interface Info.
 {
 	GUI_MODE InterfaceMode;
-	
+
 	int	width, height,	//Window width and height
-		wx , wy,			//Window starting coordinates
+		wx, wy,			//Window starting coordinates
 		StatusBarHeight,	//Status Bar Height
 		ToolBarHeight,		//Tool Bar Height (distance from top of window to bottom line of toolbar)
 		MenuItemWidth;		//Width of each item in toolbar menu
-	
+
 
 	color DrawColor;		//Drawing color
 	color FillColor;		//Filling color
@@ -65,7 +69,7 @@ struct UI_Info	//User Interface Info.
 	int PenWidth;			//width of the pen that draws shapes
 
 	/// Add more members if needed
-	
+
 }UI;	//create a global object UI
 
 #endif
