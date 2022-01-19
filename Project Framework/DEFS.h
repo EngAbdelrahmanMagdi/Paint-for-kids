@@ -7,6 +7,7 @@
 enum ActionType //The actions supported (you can add more if needed)
 {
 	DRAW_SQUARE,	//Draw a Square
+
 	DRAW_ELPS,		//Draw an Ellipse
 	DRAW_HEX,		//Draw a Hexagon
 	CHNG_DRAW_CLR,	//Change the drawing color
@@ -21,7 +22,7 @@ enum ActionType //The actions supported (you can add more if needed)
 	SAVE,			//Save the whole graph to a file
 	LOAD,			//Load a graph from a file
 	EXIT,			//Exit the application
-
+	SELECT,
 	DRAWING_AREA,	//A click on the drawing area
 	STATUS,			//A click on the status bar
 	EMPTY,			//A click on empty place in the toolbar
@@ -33,7 +34,9 @@ enum ActionType //The actions supported (you can add more if needed)
 };
 
 struct Point	//To be used for figures points
-{ int x,y; };
+{
+	int x, y;
+};
 
 struct GfxInfo	//Graphical info of each figure (you may add more members)
 {
