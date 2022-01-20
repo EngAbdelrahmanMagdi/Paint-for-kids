@@ -1,4 +1,4 @@
-#include "ActionExit.h"
+/*#include "ActionExit.h"
 #include "..\ApplicationManager.h"
 #include "..\GUI\GUI.h"
 #include "..\Actions\ActionSave.h"
@@ -7,7 +7,7 @@ ActionExit::ActionExit(ApplicationManager* pApp) :Action(pApp)
 {}
 
 //Execute the action
-/*
+
 void ActionExit::Execute()
 {
 
