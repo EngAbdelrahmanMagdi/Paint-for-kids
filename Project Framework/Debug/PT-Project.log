@@ -1,12 +1,10 @@
 ﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
   main.cpp
-  ApplicationManager.cpp
   GUI.cpp
-E:\Iti Open source\data Strusture\paint-for-kids\Paint-for-kids\Project Framework\GUI\GUI.cpp(310,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-E:\Iti Open source\data Strusture\paint-for-kids\Paint-for-kids\Project Framework\GUI\GUI.cpp(316,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-E:\Iti Open source\data Strusture\paint-for-kids\Paint-for-kids\Project Framework\GUI\GUI.cpp(317,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-E:\Iti Open source\data Strusture\paint-for-kids\Paint-for-kids\Project Framework\GUI\GUI.cpp(318,22): warning C4305: '+=': truncation from 'double' to 'float'
-  ActionAddSquare.cpp
+E:\Iti Open source\data Strusture\paint-for-kids\Paint-for-kids\Project Framework\GUI\GUI.cpp(348,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+E:\Iti Open source\data Strusture\paint-for-kids\Paint-for-kids\Project Framework\GUI\GUI.cpp(354,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\Iti Open source\data Strusture\paint-for-kids\Paint-for-kids\Project Framework\GUI\GUI.cpp(355,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\Iti Open source\data Strusture\paint-for-kids\Paint-for-kids\Project Framework\GUI\GUI.cpp(356,22): warning C4305: '+=': truncation from 'double' to 'float'
   CSquare.cpp
   CHexagon.cpp
 E:\Iti Open source\data Strusture\paint-for-kids\Paint-for-kids\Project Framework\Figures\CHexagon.cpp(8,23): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
@@ -14,15 +12,18 @@ E:\Iti Open source\data Strusture\paint-for-kids\Paint-for-kids\Project Framewor
 E:\Iti Open source\data Strusture\paint-for-kids\Paint-for-kids\Project Framework\Figures\CHexagon.cpp(37,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   CFigure.cpp
   CEllipse.cpp
+  ApplicationManager.cpp
+  ToPlayAction.cpp
+  ToDrawAction.cpp
   Select.cpp
   Delete.cpp
   ActionSendFront.cpp
   ActionSendBack.cpp
   ActionSave.cpp
   ActionExit.cpp
+  ActionAddSquare.cpp
   ActionAddHexagon.cpp
   ActionAddEllipse.cpp
   Generating Code...
-E:\Iti Open source\data Strusture\paint-for-kids\Paint-for-kids\Project Framework\ApplicationManager.cpp(256): warning C4715: 'ApplicationManager::DeleteFigure': not all control paths return a value
-ActionAddEllipse.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+E:\Iti Open source\data Strusture\paint-for-kids\Paint-for-kids\Project Framework\ApplicationManager.cpp(263): warning C4715: 'ApplicationManager::DeleteFigure': not all control paths return a value
   PT-Project.vcxproj -> E:\Iti Open source\data Strusture\paint-for-kids\Paint-for-kids\Project Framework\Debug\PT Project.exe
