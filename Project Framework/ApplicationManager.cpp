@@ -5,6 +5,9 @@
 #include "Actions\ActionExit.h"
 #include "Actions\ActionSave.h"
 #include "Actions\Select.h"
+#include "Actions\ActionSendBack.h"
+#include "Actions\ActionSendFront.h"
+#include "Actions\Delete.h"
 #include "GUI\GUI.h"
 #include <string.h>
 
@@ -82,7 +85,16 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 		newAct = new Select(this);
 		break;
 
+	case DEL:
+		newAct = new Delete(this);
+		break;
+	case SEND_BACK:	//Send a figure to the back of all figures
 
+		newAct = new ActionSendBack(this);
+		break;
+	case BRNG_FRNT:
+		newAct = new ActionBringFront(this);
+		break;
 
 	case EXIT: 
 		pGUI->PrintMessage("Are you sure? if you want to save your grapth write y");
@@ -189,6 +201,99 @@ GUI* ApplicationManager::GetGUI() const
 {
 	return pGUI;
 }
+
+
+
+
+CFigure* ApplicationManager::getSelected()
+{
+	int index = getSelectedFigure();
+	if (index >= 0)
+		return FigList[index];
+	return NULL;
+}
+// Return index of selected figure 
+int ApplicationManager::getSelectedFigure()
+{
+
+	for (int i = 0; i < FigCount; i++)
+		if (FigList[i]->IsSelected())
+			return i;
+	return -1;
+}
+
+/*void ApplicationManager::DeleteFigure()
+{
+
+	for (int i = 0; i < FigCount; i++)
+		if (FigList[i]->IsSelected()) {
+			//delete FigList[i];
+			CFigure* tmp = FigList[i];
+			FigList[i] = FigList[FigCount];
+			FigList[FigCount] = tmp;
+			delete FigList[FigCount];
+			FigList[FigCount] = NULL;
+
+
+		}
+
+}
+*/
+// -- For  Figure Deleted 
+int ApplicationManager::DeleteFigure()
+{
+	for (int i = 0; i < FigCount; i++)
+	{
+		if (FigList[i]->IsSelected())
+		{
+			delete FigList[i];
+			FigList[i] = NULL;
+			FigCount--;
+			return i;
+		}
+	}
+
+}
+// After delete figure shift elements and delete null
+void ApplicationManager::shiftFigList(int _figCount)
+{
+	for (int j = _figCount; j < FigCount; j++)
+	{
+		FigList[j] = FigList[j + 1];
+	}
+}
+
+
+//==================================================================================//
+//							Send To Back											//
+//==================================================================================//
+
+void ApplicationManager::SendToBack(int selectedIndex)
+{
+	if (selectedIndex != 0)
+	{
+		CFigure* spare = FigList[0];
+		FigList[0] = FigList[selectedIndex];
+		FigList[selectedIndex] = spare;
+	}
+}
+
+//==================================================================================//
+//							Bring To Front											//
+//==================================================================================//
+
+void ApplicationManager::BringToFront(int selectedIndex)
+{
+	if (selectedIndex != FigCount - 1)
+	{
+		CFigure* tmp = FigList[FigCount - 1];
+		FigList[FigCount - 1] = FigList[selectedIndex];
+		FigList[selectedIndex] = tmp;
+	}
+}
+
+
+
 ////////////////////////////////////////////////////////////////////////////////////
 //Destructor
 
