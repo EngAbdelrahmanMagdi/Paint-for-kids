@@ -4,11 +4,12 @@
 #include "..\GUI\GUI.h"
 #include<fstream>
 
-ActionSave::ActionSave(ApplicationManager* pApp, int FigCount) : Action(pApp)
+ActionSave::ActionSave(ApplicationManager* pApp, int FigCount,bool exit=false) : Action(pApp)
 {
 	FileName = "temp_name";
 	//FigCnt = FigCount;    //figure number to write it on the file
 	FigCnt = FigCount;
+	fireExit = exit;
 }
 
 void ActionSave::ReadActionParameters()
@@ -37,4 +38,7 @@ void ActionSave::Execute()
 	pManager->SaveAll(OutFile);  //Now Start Saving each figure proccess 
 	OutFile.close();
 	pGUI->PrintMessage("File Saved!");
+
+	if (fireExit)
+		exit(0);
 }

@@ -17,7 +17,7 @@ void CSquare::DrawMe(GUI* pGUI) const
 
 void CSquare::Save(ofstream& OutFile) {
 
-		OutFile << "CSquare\t\t"
+		OutFile << "CSquare\t"
 		<< this->ID << "\t" 
 		<< this->TopLeftCorner.x << "\t" 
 		<< this->TopLeftCorner.y << "\t"

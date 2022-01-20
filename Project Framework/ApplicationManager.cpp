@@ -74,7 +74,7 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 		break;
 
 	case SAVE:
-		newAct = new ActionSave(this,FigCount);
+		newAct = new ActionSave(this,FigCount,0);
 		break;
 
 
@@ -89,8 +89,7 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 		answer = pGUI->GetSrting();
 		if (answer == "Y" || answer == "y")
 		{
-			newAct = new ActionSave(this, FigCount);
-			pGUI->PrintMessage("The app should exit now (I'm trying to fix this!)");
+			newAct = new ActionSave(this, FigCount,true);
 		}
 		else
 		{

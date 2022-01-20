@@ -1,5 +1,3 @@
 ﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  ApplicationManager.cpp
-  ActionExit.cpp
-  Generating Code...
+  CSquare.cpp
   PT-Project.vcxproj -> D:\Ds github\Paint-for-kids\Project Framework\Debug\PT Project.exe
