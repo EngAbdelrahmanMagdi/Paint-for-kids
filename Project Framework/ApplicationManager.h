@@ -31,6 +31,10 @@ public:
 	void ExecuteAction(Action*&); //Execute an action
 	int DisplayMessageBox(); 
 
+	//--Actions-Related-To-Save-And-Load
+	string colorString(color c) const;
+	void SaveAll(ofstream& Out);
+
 	// -- Figures Management Functions
 	void AddFigure(CFigure* pFig); //Adds a new figure to the FigList
 	CFigure* GetFigure(int x, int y) const; //Search for a figure given a point inside the figure

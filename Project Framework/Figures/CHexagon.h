@@ -11,9 +11,10 @@ private:
 	
 	
 public:
+	static int HexID;
 	CHexagon(Point _P1, Point _P2, GfxInfo FigureGfxInfo);
 
-	
+	void Save(ofstream& OutFile);
 	virtual void DrawMe(GUI* pOut) const;
 	virtual bool PointInShape(int x, int y) const ;
 

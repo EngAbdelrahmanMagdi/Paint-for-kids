@@ -1,6 +1,7 @@
 #ifndef GUI_H
 #define GUI_H
 
+#include <fstream>
 #include "..\DEFS.h"
 #include "UI_Info.h" 
 #include "..\CMUgraphicsLib\CMUgraphics.h"

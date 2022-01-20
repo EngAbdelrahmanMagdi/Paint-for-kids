@@ -9,9 +9,11 @@ private:
 	Point topLeft;
 	Point bottomRight;
 public:
+	static int ElpsID;
 	CEllipse(Point, Point, GfxInfo FigureGfxInfo);
 	//CEllipse(Point P1, Point P2, GfxInfo FigureGfxInfo);
 	virtual void DrawMe(GUI* pOut) const;
+	void Save(ofstream& OutFile);
 	virtual bool PointInShape(int x, int y) const;
 };
 

@@ -132,9 +132,11 @@
     <ClCompile Include="Actions\ActionAddEllipse.cpp" />
     <ClCompile Include="Actions\ActionAddHexagon.cpp" />
     <ClCompile Include="Actions\ActionExit.cpp" />
+    <ClCompile Include="Actions\ActionSave.cpp" />
     <ClCompile Include="Actions\Select.cpp" />
     <ClCompile Include="CMUgraphicsLib\auxil.cpp" />
     <ClCompile Include="CMUgraphicsLib\CMUgraphics.cpp" />
+    <ClCompile Include="CMUgraphicsLib\colors.cpp" />
     <ClCompile Include="CMUgraphicsLib\image.cpp" />
     <ClCompile Include="CMUgraphicsLib\jpegload.c" />
     <ClCompile Include="CMUgraphicsLib\keyqueue.cpp" />
@@ -181,6 +183,7 @@
     <ClInclude Include="Actions\ActionAddEllipse.h" />
     <ClInclude Include="Actions\ActionAddHexagon.h" />
     <ClInclude Include="Actions\ActionExit.h" />
+    <ClInclude Include="Actions\ActionSave.h" />
     <ClInclude Include="Actions\Select.h" />
     <ClInclude Include="CMUgraphicsLib\auxil.h" />
     <ClInclude Include="CMUgraphicsLib\CMUgraphics.h" />

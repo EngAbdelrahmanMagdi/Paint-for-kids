@@ -3,8 +3,10 @@
 #include "Actions\ActionAddEllipse.h"
 #include "Actions\ActionAddHexagon.h"
 #include "Actions\ActionExit.h"
+#include "Actions\ActionSave.h"
 #include "Actions\Select.h"
 #include "GUI\GUI.h"
+#include <string.h>
 
 
 
@@ -54,7 +56,7 @@ void ApplicationManager::Run()
 Action* ApplicationManager::CreateAction(ActionType ActType)
 {
 	Action* newAct = NULL;
-
+	string answer, answer2;
 	//According to Action Type, create the corresponding action object
 	switch (ActType)
 	{
@@ -71,6 +73,10 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 		newAct = new ActionAddHexagon(this);
 		break;
 
+	case SAVE:
+		newAct = new ActionSave(this,FigCount);
+		break;
+
 
 	case SELECT:
 		newAct = new Select(this);
@@ -79,16 +85,20 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 
 
 	case EXIT: 
-		newAct = new ActionExit(this);
-		if (((ActionExit*)newAct)->willExit()) {
-
+		pGUI->PrintMessage("Are you sure? if you want to save your grapth write y");
+		answer = pGUI->GetSrting();
+		if (answer == "Y" || answer == "y")
+		{
+			newAct = new ActionSave(this, FigCount);
+			pGUI->PrintMessage("The app should exit now (I'm trying to fix this!)");
+		}
+		else
+		{
+			pGUI->PrintMessage("See you soon!");
 			exit(0);
 		}
-		else {
-			
-			DisplayMessageBox();
-		}
 		break;
+
 	case STATUS:	//a click on the status bar ==> no action
 		return NULL;
 		break;
@@ -136,6 +146,33 @@ CFigure* ApplicationManager::GetFigure(int x, int y) const
 
 	return NULL;
 }
+//==================================================================================//
+//							Save And load Functions									//
+//==================================================================================//
+
+//to return the UI info in a string format
+string ApplicationManager::colorString(color c) const
+{
+	if (c == BLACK) return "BLACK";
+	else if (c == WHITE) return "WHITE";
+	else if (c == BLUE) return "BLUE";
+	else if (c == RED) return "RED";
+	else if (c == YELLOW) return "YELLOW";
+	else if (c == GREEN) return "GREEN";
+	else if (c == LIGHTGOLDENRODYELLOW) return "LIGHTGOLDENRODYELLOW";
+	else if (c == MAGENTA) return "MAGENTA";
+	else if (c == TURQUOISE) return "TURQUOISE";
+	else
+		return "COLOR";
+}
+
+
+void ApplicationManager::SaveAll(ofstream& Out)   //Call the Save function for each Figure
+{
+	for (int i = 0; i < FigCount; ++i)
+		FigList[i]->Save(Out);
+}
+
 
 //==================================================================================//
 //							Interface Management Functions							//

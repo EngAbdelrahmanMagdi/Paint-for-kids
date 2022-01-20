@@ -4,9 +4,9 @@
 class ActionExit : public Action {
 
 public: 
-	bool willExit(); 
+	//bool willExit(); 
 	ActionExit (ApplicationManager* pApp);
-	virtual void Execute();
+	//virtual void Execute();
 
 };
 

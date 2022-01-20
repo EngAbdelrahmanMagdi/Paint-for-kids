@@ -89,6 +89,7 @@ ActionType GUI::MapInputToActionType() const
 			case ITM_SQUR: return DRAW_SQUARE;
 			case ITM_ELPS: return DRAW_ELPS;
 			case ITM_HEXAGON: return DRAW_HEX;
+			case ITM_SAVE: return SAVE;
 			case ITM_EXIT: return EXIT;
 			case ITM_Select: return SELECT;
 
@@ -157,6 +158,7 @@ void GUI::CreateDrawToolBar() const
 	MenuItemImages[ITM_ELPS] = "images\\MenuItems\\Menu_Elps.jpg";
 	MenuItemImages[ITM_HEXAGON] = "images\\MenuItems\\Menu_Hexagon.png";
 	MenuItemImages[ITM_Select] = "images\\MenuItems\\Menu_Select.jpg";
+	MenuItemImages[ITM_SAVE] = "images\\MenuItems\\Menu_save.jpg";
 	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
 
 	//TODO: Prepare images for each menu item and add it to the list
@@ -242,7 +244,7 @@ void GUI::DrawSquare(Point P1, int length, GfxInfo RectGfxInfo, bool selected) c
 
 
 	pWind->DrawRectangle(P1.x, P1.y, P1.x + length, P1.y + length, style);
-	pWind->DrawLine(P1.x, P1.y, P1.x + length, P1.y + length, style);
+	//pWind->DrawLine(P1.x, P1.y, P1.x + length, P1.y + length, style);
 
 }
 
