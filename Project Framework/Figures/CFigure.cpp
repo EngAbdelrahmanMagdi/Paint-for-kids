@@ -41,26 +41,22 @@ string CFigure::ColorString(color ClrObj) const  //Convert from Color Type to St
 {
 	if (ClrObj == BLACK) return "BLACK";
 	else if (ClrObj == WHITE) return "WHITE";
-	else if (ClrObj == BLUE) return "BLUE";
 	else if (ClrObj == RED) return "RED";
-	else if (ClrObj == YELLOW) return "YELLOW";
 	else if (ClrObj == GREEN) return "GREEN";
-	else if (ClrObj == LIGHTGOLDENRODYELLOW) return "LIGHTGOLDENRODYELLOW";
-	else if (ClrObj == MAGENTA) return "MAGENTA";
-	else if (ClrObj == TURQUOISE) return "TURQUOISE";
-	return "Blue";
+	else if (ClrObj == BLUE) return "BLUE";
+	else if (ClrObj == PINK) return "PINK";
+	else if (ClrObj == PURPLE) return "PRUPLE";
+	else return "BLUE";
 }
 
 color CFigure::ColorObject(string ClrStr) const  //Convert from string to color object
 {
 	if (ClrStr == "BLACK") return BLACK;
 	else if (ClrStr == "WHITE") return WHITE;
-	else if (ClrStr == "BLUE") return BLUE;
 	else if (ClrStr == "RED") return RED;
-	else if (ClrStr == "YELLOW") return YELLOW;
 	else if (ClrStr == "GREEN") return GREEN;
-	else if (ClrStr == "LIGHTGOLDENRODYELLOW") return LIGHTGOLDENRODYELLOW;
-	else if (ClrStr == "MAGENTA") return MAGENTA;
-	else if (ClrStr == "TURQUOISE") return TURQUOISE;
-	return LIGHTGOLDENRODYELLOW;
+	else if (ClrStr == "BLUE") return BLUE;
+	else if (ClrStr == "PINK") return PINK;
+	else if (ClrStr == "PURPLE") return PURPLE;
+	return BLUE;
 }

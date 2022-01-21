@@ -82,13 +82,15 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 	case TO_PLAY:		newAct = new ActionToPlay(this);			break;
 	case TO_DRAW:		newAct = new ActionToDraw(this);			break;
 	case STATUS:		return NULL;								break; //a click on the status bar ==> no action
-	case EXIT: 
+	case EXIT:			DisplayMessageBox();						break;
+		/*
 		pGUI->PrintMessage("Are you sure? if you want to save your grapth write y");
 		answer = pGUI->GetSrting();
 		if (answer == "Y" || answer == "y")
 			newAct = new ActionSave(this, FigCount,true);
 		else { pGUI->PrintMessage("See you soon!"); Sleep(1000); exit(0); }
 		break;
+		*/
 	}
 	return newAct;
 }
@@ -294,8 +296,7 @@ ApplicationManager::~ApplicationManager()
 {
 	for (int i = 0; i < FigCount; i++)
 		delete FigList[i];
-	delete pGUI;
-
+		delete pGUI;
 }
 
 
@@ -307,7 +308,7 @@ int ApplicationManager::DisplayMessageBox()
 {
 	int msgboxID = MessageBox(
 		NULL,
-		"You didn't save the drawing\nAre you sure?",
+		"You didn't save the drawing\nClick cancel to save\nOk to exit",
 		"Exit",
 		MB_OKCANCEL | MB_DEFBUTTON2 | MB_ICONWARNING
 	);
@@ -315,14 +316,15 @@ int ApplicationManager::DisplayMessageBox()
 	switch (msgboxID)
 	{
 	case IDCANCEL:
-		pGUI->PrintMessage("The app should keep alive");
-		break;
+				break;
 	case IDOK:
-
-		pGUI->PrintMessage("The app should cancel");
 		exit(0);
 		break;
 	}
+	//thia will execute the save and then exit immediatelly
+	Action* newAct = new ActionSave(this, FigCount, true);
+	ExecuteAction(newAct);
+
 	
 	return msgboxID;
 }

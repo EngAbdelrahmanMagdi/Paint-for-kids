@@ -1,7 +1,4 @@
 ﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  GUI.cpp
-D:\Ds github\Paint-for-kids\Project Framework\GUI\GUI.cpp(393,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-D:\Ds github\Paint-for-kids\Project Framework\GUI\GUI.cpp(399,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-D:\Ds github\Paint-for-kids\Project Framework\GUI\GUI.cpp(400,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-D:\Ds github\Paint-for-kids\Project Framework\GUI\GUI.cpp(401,22): warning C4305: '+=': truncation from 'double' to 'float'
+  ApplicationManager.cpp
+D:\Ds github\Paint-for-kids\Project Framework\ApplicationManager.cpp(250): warning C4715: 'ApplicationManager::DeleteFigure': not all control paths return a value
   PT-Project.vcxproj -> D:\Ds github\Paint-for-kids\Project Framework\Debug\PT Project.exe
