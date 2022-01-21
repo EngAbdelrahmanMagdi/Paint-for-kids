@@ -15,7 +15,9 @@ void changeCrntDrawColor::Execute()
 	GUI* pGUI = pManager->GetGUI();
 	Point P1;
 	int ClickedItemOrder;
-	pGUI->CreateColorToolBar();;
+	pGUI->ClearToolBarArea();
+
+	pGUI->CreateColorToolBar();
 	//Get the coordinates of the user click
 	pGUI->PrintMessage("Choose a drawing color");
 	pGUI->GetPointClicked(P1.x, P1.y);
@@ -61,12 +63,6 @@ void changeCrntDrawColor::Execute()
 	
 	}
 	pGUI->CreateDrawToolBar();
-
-
-
-
-
-
 
 	pGUI->ClearStatusBar();
 

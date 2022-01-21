@@ -43,7 +43,7 @@ public:
 	///TODO: Make similar functions for drawing all other figures.
 
 	void PrintMessage(string msg) const;	//Print a message on Status bar
-
+	void ClearToolBarArea() const;
 	color getCrntDrawColor() const;	//get current drwawing color
 	void setCrntDrawColor(color c) const;
 	color getCrntFillColor() const;	//get current filling color

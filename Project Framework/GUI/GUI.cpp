@@ -258,7 +258,13 @@ void GUI::ClearDrawArea() const
 
 }
 //////////////////////////////////////////////////////////////////////////////////////////
+void GUI::ClearToolBarArea() const
+{
+	pWind->SetPen(WHITE, 1);
+	pWind->SetBrush(WHITE);
+	pWind->DrawRectangle(0, 0, UI.width, UI.ToolBarHeight);
 
+}
 void GUI::PrintMessage(string msg) const	//Prints a message on status bar
 {
 	ClearStatusBar();	//First clear the status bar

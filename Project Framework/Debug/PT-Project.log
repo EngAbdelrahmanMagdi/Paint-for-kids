@@ -1,23 +1,7 @@
 ﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
   ApplicationManager.cpp
-<<<<<<< HEAD
   changeCurrentFillColor.cpp
+  changeCrntDrawColor.cpp
   Generating Code...
-C:\Users\mahmoud\Desktop\Paint-Project\Paint-for-kids\Project Framework\ApplicationManager.cpp(263): warning C4715: 'ApplicationManager::DeleteFigure': not all control paths return a value
+C:\Users\mahmoud\Desktop\Paint-Project\Paint-for-kids\Project Framework\ApplicationManager.cpp(270): warning C4715: 'ApplicationManager::DeleteFigure': not all control paths return a value
   PT-Project.vcxproj -> C:\Users\mahmoud\Desktop\Paint-Project\Paint-for-kids\Project Framework\Debug\PT Project.exe
-=======
-  ActionExit.cpp
-  Generating Code...
-E:\Iti Open source\data Strusture\paint-for-kids\Paint-for-kids\Project Framework\ApplicationManager.cpp(263): warning C4715: 'ApplicationManager::DeleteFigure': not all control paths return a value
-ActionAddEllipse.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
-jdhuff.obj : warning LNK4205: '' is missing current debugging information for referencing module; linking object as if no debug info
-jddctmgr.obj : warning LNK4205: '' is missing current debugging information for referencing module; linking object as if no debug info
-jdcolor.obj : warning LNK4205: 'E:\Iti Open source\data Strusture\paint-for-kids\Paint-for-kids\Project Framework\Debug\vc143.pdb' is missing current debugging information for referencing module; linking object as if no debug info
-jdcoefct.obj : warning LNK4205: '' is missing current debugging information for referencing module; linking object as if no debug info
-jdatasrc.obj : warning LNK4205: 'E:\Iti Open source\data Strusture\paint-for-kids\Paint-for-kids\Project Framework\Debug\vc143.pdb' is missing current debugging information for referencing module; linking object as if no debug info
-jdapistd.obj : warning LNK4205: 'E:\Iti Open source\data Strusture\paint-for-kids\Paint-for-kids\Project Framework\Debug\vc143.pdb' is missing current debugging information for referencing module; linking object as if no debug info
-jdapimin.obj : warning LNK4205: 'E:\Iti Open source\data Strusture\paint-for-kids\Paint-for-kids\Project Framework\Debug\vc143.pdb' is missing current debugging information for referencing module; linking object as if no debug info
-jcparam.obj : warning LNK4205: 'E:\Iti Open source\data Strusture\paint-for-kids\Paint-for-kids\Project Framework\Debug\vc143.pdb' is missing current debugging information for referencing module; linking object as if no debug info
-jcomapi.obj : warning LNK4205: '' is missing current debugging information for referencing module; linking object as if no debug info
-  PT-Project.vcxproj -> E:\Iti Open source\data Strusture\paint-for-kids\Paint-for-kids\Project Framework\Debug\PT Project.exe
->>>>>>> 4ec44f8e08c465762dc393c52623342b9f37542a

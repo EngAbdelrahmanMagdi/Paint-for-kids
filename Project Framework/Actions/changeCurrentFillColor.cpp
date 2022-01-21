@@ -15,6 +15,8 @@ void changeCurrentFillColor::Execute()
 	GUI* pGUI = pManager->GetGUI();
 	Point P1;
 	int ClickedItemOrder;
+	pGUI->ClearToolBarArea();
+
 	pGUI->CreateColorToolBar();
 	//Get the coordinates of the user click
 
@@ -61,13 +63,6 @@ void changeCurrentFillColor::Execute()
 
 	}
 	pGUI->CreateDrawToolBar();
-
-
-
-
-
-
-
 	pGUI->ClearStatusBar();
 
 }
