@@ -6,20 +6,20 @@ GUI::GUI()
 	//Initialize user interface parameters
 	UI.InterfaceMode = MODE_DRAW;
 
-	UI.width = 1300; //1300
-	UI.height = 700; //700
+	UI.width = 1500; //1300
+	UI.height = 900; //700
 	UI.wx = 5;
 	UI.wy = 5;
 
 
 	UI.StatusBarHeight = 50;
-	UI.ToolBarHeight = 50;
-	UI.MenuItemWidth = 80;
+	UI.ToolBarHeight = 75;
+	UI.MenuItemWidth = 100;
 
 	UI.DrawColor = BLUE;	//Drawing color
 	UI.FillColor = GREEN;	//Filling color
 	UI.MsgColor = RED;		//Messages color
-	UI.BkGrndColor = LIGHTGOLDENRODYELLOW;	//Background color
+	UI.BkGrndColor = WHITE;	//Background color
 	UI.HighlightColor = MAGENTA;	//This color should NOT be used to draw figures. use if for highlight only
 	UI.StatusBarColor = TURQUOISE;
 	UI.PenWidth = 3;	//width of the figures frames
@@ -179,7 +179,7 @@ void GUI::CreateDrawToolBar() const
 	string MenuItemImages[DRAW_ITM_COUNT];
 	MenuItemImages[ITM_SQUR] = "images\\MenuItems\\Menu_Sqr.jpg";
 	MenuItemImages[ITM_ELPS] = "images\\MenuItems\\Menu_Elps.jpg";
-	MenuItemImages[ITM_HEXAGON] = "images\\MenuItems\\Menu_Hexagon.png";
+	MenuItemImages[ITM_HEXAGON] = "images\\MenuItems\\Menu_Hexagon.jpg";
 	MenuItemImages[DRAW_CLR] = "images\\MenuItems\\st3.jpg";
 	MenuItemImages[FILL_CLR] = "images\\MenuItems\\fillc.jpg";
 	MenuItemImages[ITM_Select] = "images\\MenuItems\\Menu_Select.jpg";
@@ -271,7 +271,7 @@ void GUI::PrintMessage(string msg) const	//Prints a message on status bar
 
 	pWind->SetPen(UI.MsgColor, 50);
 	pWind->SetFont(20, BOLD, BY_NAME, "Arial");
-	pWind->DrawString(10, UI.height - (int)(UI.StatusBarHeight / 1.5), msg);
+	pWind->DrawString(10, UI.height - (int)(UI.StatusBarHeight / 1.2), msg);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
