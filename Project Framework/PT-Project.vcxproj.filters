@@ -175,8 +175,17 @@
     <ClCompile Include="Actions\Delete.cpp">
       <Filter>Action Classes</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Actions\changeCrntDrawColor.cpp" />
     <ClCompile Include="Actions\changeCurrentFillColor.cpp" />
+=======
+    <ClCompile Include="Actions\ToPlayAction.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\ToDrawAction.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+>>>>>>> 4ec44f8e08c465762dc393c52623342b9f37542a
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h">
@@ -291,10 +300,19 @@
     <ClInclude Include="Actions\Delete.h">
       <Filter>Action Classes</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Actions\changeCrntDrawColor.h" />
     <ClInclude Include="Actions\changeCurrentFillColor.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PT-Project.vcproj" />
+=======
+    <ClInclude Include="Actions\ToPlayAction.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\ToDrawAction.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+>>>>>>> 4ec44f8e08c465762dc393c52623342b9f37542a
   </ItemGroup>
 </Project>

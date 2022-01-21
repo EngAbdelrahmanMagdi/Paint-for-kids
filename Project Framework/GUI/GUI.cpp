@@ -97,7 +97,8 @@ ActionType GUI::MapInputToActionType() const
 			case ITM_Select: return SELECT;
 			case ITM_Delete: return DEL;
 			case ITM_Send_Back: return SEND_BACK;
-			case ITM_Send_Front: return BRNG_FRNT; 
+			case ITM_Send_Front: return BRNG_FRNT;
+			case ITM_TO_PLAY: return TO_PLAY;
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
 		}
@@ -111,8 +112,25 @@ ActionType GUI::MapInputToActionType() const
 		//[3] User clicks on the status bar
 		return STATUS;
 	}
-	else	//GUI is in PLAY mode
+	else 	//GUI is in PLAY mode
 	{
+		
+		if (y >= 0 && y < UI.ToolBarHeight) {
+			int ClickedItemOrder = (x / UI.MenuItemWidth);
+
+			switch (ClickedItemOrder)
+			{
+			case ITM_TO_DRAW:return TO_DRAW;
+			default: return EMPTY;
+
+			}
+
+		}
+		if (y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
+		{
+			return PLAYING_AREA;
+		}
+
 		///TODO:
 		//perform checks similar to Draw mode checks above
 		//and return the correspoding action
@@ -169,6 +187,7 @@ void GUI::CreateDrawToolBar() const
 	MenuItemImages[ITM_Send_Back] = "images\\MenuItems\\sendtoback.jpg";
 	MenuItemImages[ITM_Send_Front] = "images\\MenuItems\\bringtofront.jpg";
 	MenuItemImages[ITM_SAVE] = "images\\MenuItems\\Menu_save.jpg";
+	MenuItemImages[ITM_TO_PLAY] = "images\\MenuItems\\playm.jpg";
 	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
 
 	//TODO: Prepare images for each menu item and add it to the list
@@ -209,6 +228,25 @@ void GUI::CreatePlayToolBar() const
 {
 	UI.InterfaceMode = MODE_PLAY;
 	///TODO: write code to create Play mode menu
+
+	pWind->SetPen(UI.BkGrndColor, 1);
+	pWind->SetBrush(UI.BkGrndColor);
+	pWind->DrawRectangle(0, 0, UI.width, UI.height - UI.ToolBarHeight);
+
+	string MenuItemImages2[PLAY_ITM_COUNT];
+
+	MenuItemImages2[ITM_TO_DRAW] = "images\\MenuItems\\drawm.jpg";
+
+	//Draw menu item one image at a time
+	for (int i = 0; i < PLAY_ITM_COUNT; i++)
+		pWind->DrawImage(MenuItemImages2[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
+
+
+
+	//Draw a line under the toolbar
+	pWind->SetPen(BLUE, 5);
+	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
+
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 

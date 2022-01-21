@@ -8,6 +8,8 @@
 #include "Actions\ActionSendBack.h"
 #include "Actions\ActionSendFront.h"
 #include "Actions\Delete.h"
+#include "Actions\ToPlayAction.h"
+#include "Actions\ToDrawAction.h"
 #include "GUI\GUI.h"
 #include <string.h>
 #include "Actions\changeCrntDrawColor.h"
@@ -102,7 +104,12 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 	case BRNG_FRNT:
 		newAct = new ActionBringFront(this);
 		break;
-
+	case TO_PLAY:
+		newAct = new ActionToPlay(this);
+	break;
+	case TO_DRAW:
+		newAct = new ActionToDraw(this);
+		break;
 	case EXIT: 
 		pGUI->PrintMessage("Are you sure? if you want to save your grapth write y");
 		answer = pGUI->GetSrting();
