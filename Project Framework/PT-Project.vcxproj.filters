@@ -175,6 +175,8 @@
     <ClCompile Include="Actions\Delete.cpp">
       <Filter>Action Classes</Filter>
     </ClCompile>
+    <ClCompile Include="Actions\changeCrntDrawColor.cpp" />
+    <ClCompile Include="Actions\changeCurrentFillColor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h">
@@ -289,5 +291,10 @@
     <ClInclude Include="Actions\Delete.h">
       <Filter>Action Classes</Filter>
     </ClInclude>
+    <ClInclude Include="Actions\changeCrntDrawColor.h" />
+    <ClInclude Include="Actions\changeCurrentFillColor.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PT-Project.vcproj" />
   </ItemGroup>
 </Project>

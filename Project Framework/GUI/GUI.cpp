@@ -89,6 +89,9 @@ ActionType GUI::MapInputToActionType() const
 			case ITM_SQUR: return DRAW_SQUARE;
 			case ITM_ELPS: return DRAW_ELPS;
 			case ITM_HEXAGON: return DRAW_HEX;
+			case DRAW_CLR:return CHNG_DRAW_CLR;
+			case FILL_CLR: return CHNG_FILL_CLR;
+
 			case ITM_SAVE: return SAVE;
 			case ITM_EXIT: return EXIT;
 			case ITM_Select: return SELECT;
@@ -159,6 +162,8 @@ void GUI::CreateDrawToolBar() const
 	MenuItemImages[ITM_SQUR] = "images\\MenuItems\\Menu_Sqr.jpg";
 	MenuItemImages[ITM_ELPS] = "images\\MenuItems\\Menu_Elps.jpg";
 	MenuItemImages[ITM_HEXAGON] = "images\\MenuItems\\Menu_Hexagon.png";
+	MenuItemImages[DRAW_CLR] = "images\\MenuItems\\st3.jpg";
+	MenuItemImages[FILL_CLR] = "images\\MenuItems\\fillc.jpg";
 	MenuItemImages[ITM_Select] = "images\\MenuItems\\Menu_Select.jpg";
 	MenuItemImages[ITM_Delete] = "images\\MenuItems\\DELETE.jpg";
 	MenuItemImages[ITM_Send_Back] = "images\\MenuItems\\sendtoback.jpg";
@@ -178,6 +183,25 @@ void GUI::CreateDrawToolBar() const
 	pWind->SetPen(RED, 3);
 	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
 
+}
+void GUI::CreateColorToolBar() const
+{
+	///TODO: write code to create Play mode menu
+	string MenuItemImages[COLOR_ITM_COUNT];
+	MenuItemImages[ITM_BLACK] = "images\\MenuItems\\black.jpg";
+	MenuItemImages[ITM_WHITE] = "images\\MenuItems\\white.jpg";
+	MenuItemImages[ITM_RED] = "images\\MenuItems\\red.jpg";
+	MenuItemImages[ITM_GREEN] = "images\\MenuItems\\green.jpg";
+	MenuItemImages[ITM_BLUE] = "images\\MenuItems\\blue.jpg";
+	MenuItemImages[ITM_PINK] = "images\\MenuItems\\pink.jpg";
+	MenuItemImages[ITM_PURPLE] = "images\\MenuItems\\purple.jpg";
+
+
+	//TODO: Prepare images for each menu item and add it to the list
+
+	//Draw menu item one image at a time
+	for (int i = 0; i < COLOR_ITM_COUNT; i++)
+		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -213,15 +237,29 @@ color GUI::getCrntDrawColor() const	//get current drwawing color
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-color GUI::getCrntFillColor() const	//get current filling color
-{
-	return UI.FillColor;
-}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 
 int GUI::getCrntPenWidth() const		//get current pen width
 {
 	return UI.PenWidth;
+}
+void GUI::setCrntDrawColor(color c) const	//set current drwawing color
+{
+	UI.DrawColor = c;
+}
+
+color GUI::getCrntFillColor() const	//get current filling color
+{
+	return UI.FillColor;
+}
+////////////////////////////////
+void GUI::setCrntFillColor(color c) const	//get current drwawing color
+{
+	UI.filled_OR_not = true;
+
+	UI.FillColor = c;
+
 }
 
 //======================================================================================//

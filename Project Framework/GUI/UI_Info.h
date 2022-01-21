@@ -20,6 +20,8 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 	ITM_SQUR,		//Square item in menu
 	ITM_ELPS,
 	ITM_HEXAGON,
+	DRAW_CLR,
+	FILL_CLR,
 	ITM_Select,
 	ITM_Delete,
 	ITM_Send_Back,
@@ -45,6 +47,17 @@ enum PlayMenuItem //The items of the Play menu (you should add more items)
 	PLAY_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
 
 };
+enum SetColor
+{
+	ITM_BLACK,
+	ITM_WHITE,
+	ITM_RED,
+	ITM_GREEN,
+	ITM_BLUE,
+	ITM_PINK,
+	ITM_PURPLE,
+	COLOR_ITM_COUNT
+};
 
 
 
@@ -55,7 +68,7 @@ __declspec(selectany) //This line to prevent "redefinition error"
 struct UI_Info	//User Interface Info.
 {
 	GUI_MODE InterfaceMode;
-
+	bool filled_OR_not = false;
 	int	width, height,	//Window width and height
 		wx, wy,			//Window starting coordinates
 		StatusBarHeight,	//Status Bar Height

@@ -4,6 +4,15 @@ CFigure::CFigure(GfxInfo FigureGfxInfo)
 {
 	FigGfxInfo = FigureGfxInfo;	//Default status is non-filled.
 	Selected = false;
+	if (UI.filled_OR_not) {
+
+		FigGfxInfo.isFilled = true;
+
+	}
+	else {
+		FigGfxInfo.isFilled = false;
+
+	}
 }
 
 void CFigure::SetSelected(bool s)

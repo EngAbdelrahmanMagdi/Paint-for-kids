@@ -10,6 +10,8 @@
 #include "Actions\Delete.h"
 #include "GUI\GUI.h"
 #include <string.h>
+#include "Actions\changeCrntDrawColor.h"
+#include "Actions\changeCurrentFillColor.h"
 
 
 
@@ -71,11 +73,16 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 		newAct = new ActionAddEllipse(this);
 
 		break;
-
-	case DRAW_HEX:
+	
+  	case DRAW_HEX:
 		newAct = new ActionAddHexagon(this);
 		break;
-
+	case CHNG_DRAW_CLR:
+		newAct = new changeCrntDrawColor(this);
+		break;
+	case CHNG_FILL_CLR:
+		newAct = new changeCurrentFillColor(this);
+		break;
 	case SAVE:
 		newAct = new ActionSave(this,FigCount,0);
 		break;
