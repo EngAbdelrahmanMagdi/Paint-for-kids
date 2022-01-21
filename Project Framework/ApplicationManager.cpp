@@ -10,6 +10,7 @@
 #include "Actions\Delete.h"
 #include "Actions\ToPlayAction.h"
 #include "Actions\ToDrawAction.h"
+#include "Actions\ActionLoad.h"
 #include "GUI\GUI.h"
 #include <string.h>
 #include "Actions\changeCrntDrawColor.h"
@@ -67,65 +68,26 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 	//According to Action Type, create the corresponding action object
 	switch (ActType)
 	{
-	case DRAW_SQUARE:
-		newAct = new ActionAddSquare(this);
-		break;
-
-	case DRAW_ELPS:
-		newAct = new ActionAddEllipse(this);
-
-		break;
-	
-  	case DRAW_HEX:
-		newAct = new ActionAddHexagon(this);
-		break;
-	case CHNG_DRAW_CLR:
-		newAct = new changeCrntDrawColor(this);
-		break;
-	case CHNG_FILL_CLR:
-		newAct = new changeCurrentFillColor(this);
-		break;
-	case SAVE:
-		newAct = new ActionSave(this,FigCount,0);
-		break;
-
-
-	case SELECT:
-		newAct = new Select(this);
-		break;
-
-	case DEL:
-		newAct = new Delete(this);
-		break;
-	case SEND_BACK:	//Send a figure to the back of all figures
-
-		newAct = new ActionSendBack(this);
-		break;
-	case BRNG_FRNT:
-		newAct = new ActionBringFront(this);
-		break;
-	case TO_PLAY:
-		newAct = new ActionToPlay(this);
-	break;
-	case TO_DRAW:
-		newAct = new ActionToDraw(this);
-		break;
+	case DRAW_SQUARE:	newAct = new ActionAddSquare(this);			break;
+	case DRAW_ELPS:		newAct = new ActionAddEllipse(this);		break;
+	case DRAW_HEX:		newAct = new ActionAddHexagon(this);		break;
+	case CHNG_DRAW_CLR:	newAct = new changeCrntDrawColor(this);		break;
+	case CHNG_FILL_CLR:	newAct = new changeCurrentFillColor(this);	break;
+	case SAVE:			newAct = new ActionSave(this,FigCount,0);	break; //0 is a flag to fire exit on save
+	case LOAD:			newAct = new ActionLoad(this,FigCount);		break;
+	case SELECT:		newAct = new Select(this);					break;
+	case DEL:			newAct = new Delete(this);					break;
+	case SEND_BACK:		newAct = new ActionSendBack(this);			break;
+	case BRNG_FRNT:		newAct = new ActionBringFront(this);		break;
+	case TO_PLAY:		newAct = new ActionToPlay(this);			break;
+	case TO_DRAW:		newAct = new ActionToDraw(this);			break;
+	case STATUS:		return NULL;								break; //a click on the status bar ==> no action
 	case EXIT: 
 		pGUI->PrintMessage("Are you sure? if you want to save your grapth write y");
 		answer = pGUI->GetSrting();
 		if (answer == "Y" || answer == "y")
-		{
 			newAct = new ActionSave(this, FigCount,true);
-		}
-		else
-		{
-			pGUI->PrintMessage("See you soon!");
-			exit(0);
-		}
-		break;
-
-	case STATUS:	//a click on the status bar ==> no action
-		return NULL;
+		else { pGUI->PrintMessage("See you soon!"); Sleep(1000); exit(0); }
 		break;
 	}
 	return newAct;
@@ -175,22 +137,30 @@ CFigure* ApplicationManager::GetFigure(int x, int y) const
 //							Save And load Functions									//
 //==================================================================================//
 
-//to return the UI info in a string format
-string ApplicationManager::colorString(color c) const
+//Convert from color object to string to save
+string ApplicationManager::colorString(color ClrObj) const
 {
-	if (c == BLACK) return "BLACK";
-	else if (c == WHITE) return "WHITE";
-	else if (c == BLUE) return "BLUE";
-	else if (c == RED) return "RED";
-	else if (c == YELLOW) return "YELLOW";
-	else if (c == GREEN) return "GREEN";
-	else if (c == LIGHTGOLDENRODYELLOW) return "LIGHTGOLDENRODYELLOW";
-	else if (c == MAGENTA) return "MAGENTA";
-	else if (c == TURQUOISE) return "TURQUOISE";
-	else
-		return "COLOR";
+	if (ClrObj == BLACK) return "BLACK";
+	else if (ClrObj == WHITE) return "WHITE";
+	else if (ClrObj == RED) return "RED";
+	else if (ClrObj == GREEN) return "GREEN";
+	else if (ClrObj == BLUE) return "BLUE";
+	else if (ClrObj == PINK) return "PINK";
+	else if (ClrObj == PURPLE) return "PRUPLE";
+	else return "BLUE";
 }
-
+//Convert from string to color object to load
+color ApplicationManager::ColorObject(string ClrStr) const
+{
+	if (ClrStr == "BLACK") return BLACK;
+	else if (ClrStr == "WHITE") return WHITE;
+	else if (ClrStr == "RED") return RED;
+	else if (ClrStr == "GREEN") return GREEN;
+	else if (ClrStr == "BLUE") return BLUE;
+	else if (ClrStr == "PINK") return PINK;
+	else if (ClrStr == "PURPLE") return PURPLE;
+	return BLUE;
+}
 
 void ApplicationManager::SaveAll(ofstream& Out)   //Call the Save function for each Figure
 {
@@ -216,7 +186,15 @@ GUI* ApplicationManager::GetGUI() const
 	return pGUI;
 }
 
-
+void ApplicationManager::ClearFigList()
+{
+	for (int i = 0; i < FigCount; i++)
+	{
+		delete FigList[i];
+		FigList[i] = NULL;
+	}
+	FigCount = 0;
+}
 
 
 CFigure* ApplicationManager::getSelected()

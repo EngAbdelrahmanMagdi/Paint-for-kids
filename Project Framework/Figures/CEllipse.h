@@ -11,9 +11,11 @@ private:
 public:
 	static int ElpsID;
 	CEllipse(Point, Point, GfxInfo FigureGfxInfo);
+	CEllipse();
 	//CEllipse(Point P1, Point P2, GfxInfo FigureGfxInfo);
 	virtual void DrawMe(GUI* pOut) const;
 	void Save(ofstream& OutFile);
+	void Load(ifstream&);
 	virtual bool PointInShape(int x, int y) const;
 };
 

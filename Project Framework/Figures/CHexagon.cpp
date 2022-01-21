@@ -8,6 +8,7 @@ CHexagon::CHexagon(Point _P1, Point _P2, GfxInfo FigureGfxInfo) :CFigure(FigureG
 	P2.x = (P1.x + P2.x) * 0.5; 
 	radius = sqrt(pow(P1.x - P2.x, 2) + pow(P1.y - P2.y, 2)) *0.5;
 }
+CHexagon::CHexagon() {}; //default constructor
 
 int CHexagon::HexID = 0;
 
@@ -27,6 +28,7 @@ void CHexagon::Save(ofstream& OutFile) {
 	else
 		OutFile << "NO_FILL\n";
 }
+void CHexagon::Load(ifstream& Infile) {}
 
 void CHexagon::DrawMe(GUI* pGUI) const
 {

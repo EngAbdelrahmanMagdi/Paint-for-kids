@@ -6,12 +6,9 @@ CEllipse::CEllipse(Point P1, Point P2, GfxInfo FigureGfxInfo) :CFigure(FigureGfx
 	topLeft = P1;
 	bottomRight = P2;
 
-
-	//int x1 = P1.x;
-	//int y1 = P1.y;
-	//int x2 = P2.x;
-	//int y2 = P2.y;
 }
+CEllipse::CEllipse() {}; //default constructor
+
 
 int CEllipse::ElpsID = 0;
 
@@ -37,6 +34,28 @@ void CEllipse::Save(ofstream& OutFile) {
 	else
 		OutFile << "NO_FILL\n";
 }
+void CEllipse::Load(ifstream& Infile) {
+	string s;
+	Infile >> ID 
+		>> topLeft.x 
+		>> topLeft.y 
+		>> bottomRight.x 
+		>> bottomRight.y;
+
+	Infile >> s;
+	FigGfxInfo.DrawClr = this->ColorObject(s);
+
+	Infile >> s;
+	if (s == "NO_FILL")
+		FigGfxInfo.isFilled = false;
+	else
+	{
+		FigGfxInfo.FillClr = this->ColorObject(s);
+		FigGfxInfo.isFilled = true;
+	}
+	this->FigGfxInfo.BorderWdth = 3; //pass 3 as a default value for borderWidth
+	this->SetSelected(false);
+};
 
 bool CEllipse::PointInShape(int x, int y) const {
 	return (x >= topLeft.x && x <= bottomRight.x)
