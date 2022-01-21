@@ -18,17 +18,17 @@ GUI::GUI()
 
 	UI.DrawColor = BLUE;	//Drawing color
 	UI.FillColor = GREEN;	//Filling color
-	UI.MsgColor = RED;		//Messages color
+	UI.MsgColor = WHITE;		//Messages color
 	UI.BkGrndColor = WHITE;	//Background color
 	UI.HighlightColor = MAGENTA;	//This color should NOT be used to draw figures. use if for highlight only
-	UI.StatusBarColor = TURQUOISE;
+	UI.StatusBarColor = LIGHTSLATEGRAY;
 	UI.PenWidth = 3;	//width of the figures frames
 
 
 	//Create the output window
 	pWind = CreateWind(UI.width, UI.height, UI.wx, UI.wy);
 	//Change the title
-	pWind->ChangeTitle("Paint for Kids - Programming Techniques Project");
+	pWind->ChangeTitle("Paint for Kids - Project - OS Mansoura 42");
 
 	CreateDrawToolBar();
 	CreateStatusBar();
@@ -199,7 +199,7 @@ void GUI::CreateDrawToolBar() const
 
 
 	//Draw a line under the toolbar
-	pWind->SetPen(RED, 3);
+	pWind->SetPen(LIGHTSLATEGRAY, 3);
 	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
 
 }
