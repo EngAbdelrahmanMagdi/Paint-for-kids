@@ -63,5 +63,5 @@ void CHexagon::DrawMe(GUI* pGUI) const
 
 bool CHexagon::PointInShape(int x, int y) const {
 	int length = sqrt(pow(P1.x - x, 2) + pow(P1.y - y, 2)); 
-	return length <= radius; 
+	return length <= radius*2; 
 }

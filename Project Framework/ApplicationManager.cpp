@@ -107,7 +107,7 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 	case TO_DRAW:
 		newAct = new ActionToDraw(this);
 		break;
-	
+	case LOAD:		newAct = new ActionLoad(this, FigCount);		break;
 	case EXIT:	
 		DisplayMessageBox();	
 		break;

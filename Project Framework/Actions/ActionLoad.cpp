@@ -46,10 +46,13 @@ void ActionLoad::Execute()
 			string DrawClr, FillClr, BgClr;
 			InputFile >> DrawClr;
 			UI.DrawColor = pManager->ColorObject(DrawClr);
+
 			InputFile >> FillClr;
 			UI.FillColor = pManager->ColorObject(FillClr);
+
 			InputFile >> BgClr;
 			UI.BkGrndColor = pManager->ColorObject(BgClr);
+
 			InputFile >> numberOfFiguers;
 			//cleaning the figlist before loading the file
 			pManager->ClearFigList();

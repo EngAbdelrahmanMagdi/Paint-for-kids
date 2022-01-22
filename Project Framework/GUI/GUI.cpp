@@ -13,8 +13,8 @@ GUI::GUI()
 
 
 	UI.StatusBarHeight = 50;
-	UI.ToolBarHeight = 85;
-	UI.MenuItemWidth = 100;
+	UI.ToolBarHeight = 75;
+	UI.MenuItemWidth = 75;
 
 	UI.DrawColor = BLUE;	//Drawing color
 	UI.FillColor = GREEN;	//Filling color
@@ -278,9 +278,7 @@ void GUI::PrintMessage(string msg) const	//Prints a message on status bar
 //////////////////////////////////////////////////////////////////////////////////////////
 void GUI::setBgColor(color c) const	//get current drwawing color
 {
-
 	UI.BkGrndColor = c;
-
 }
 
 color GUI::getCrntDrawColor() const	//get current drwawing color
