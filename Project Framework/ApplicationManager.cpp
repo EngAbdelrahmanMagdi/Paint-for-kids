@@ -10,6 +10,7 @@
 #include "Actions\Delete.h"
 #include "Actions\ToPlayAction.h"
 #include "Actions\ToDrawAction.h"
+#include "Actions\ActionLoad.h"
 #include "GUI\GUI.h"
 #include <string.h>
 #include "Actions\changeCrntDrawColor.h"
@@ -115,22 +116,31 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 		newAct = new ActionToDraw(this);
 		break;
 	case EXIT: 
+	case DRAW_SQUARE:	newAct = new ActionAddSquare(this);			break;
+	case DRAW_ELPS:		newAct = new ActionAddEllipse(this);		break;
+	case DRAW_HEX:		newAct = new ActionAddHexagon(this);		break;
+	case CHNG_DRAW_CLR:	newAct = new changeCrntDrawColor(this);		break;
+	case CHNG_FILL_CLR:	newAct = new changeCurrentFillColor(this);	break;
+	case SAVE:			newAct = new ActionSave(this,FigCount,0);	break; //0 is a flag to fire exit on save
+	case LOAD:			newAct = new ActionLoad(this,FigCount);		break;
+	case SELECT:		newAct = new Select(this);					break;
+	case DEL:			newAct = new Delete(this);					break;
+	case SEND_BACK:		newAct = new ActionSendBack(this);			break;
+	case BRNG_FRNT:		newAct = new ActionBringFront(this);		break;
+	case TO_PLAY:		newAct = new ActionToPlay(this);			break;
+	case TO_DRAW:		newAct = new ActionToDraw(this);			break;
+	case EXIT:			DisplayMessageBox();						break;
+	case STATUS:		return NULL;								break; //a click on the status bar ==> no action
+		/*m
+		* 
+		* //this is the old implementation of the exit button
 		pGUI->PrintMessage("Are you sure? if you want to save your grapth write y");
 		answer = pGUI->GetSrting();
 		if (answer == "Y" || answer == "y")
-		{
 			newAct = new ActionSave(this, FigCount,true);
-		}
-		else
-		{
-			pGUI->PrintMessage("See you soon!");
-			exit(0);
-		}
+		else { pGUI->PrintMessage("See you soon!"); Sleep(1000); exit(0); }
 		break;
-
-	case STATUS:	//a click on the status bar ==> no action
-		return NULL;
-		break;
+		*/
 	}
 	return newAct;
 }
@@ -179,22 +189,30 @@ CFigure* ApplicationManager::GetFigure(int x, int y) const
 //							Save And load Functions									//
 //==================================================================================//
 
-//to return the UI info in a string format
-string ApplicationManager::colorString(color c) const
+//Convert from color object to string to save
+string ApplicationManager::colorString(color ClrObj) const
 {
-	if (c == BLACK) return "BLACK";
-	else if (c == WHITE) return "WHITE";
-	else if (c == BLUE) return "BLUE";
-	else if (c == RED) return "RED";
-	else if (c == YELLOW) return "YELLOW";
-	else if (c == GREEN) return "GREEN";
-	else if (c == LIGHTGOLDENRODYELLOW) return "LIGHTGOLDENRODYELLOW";
-	else if (c == MAGENTA) return "MAGENTA";
-	else if (c == TURQUOISE) return "TURQUOISE";
-	else
-		return "COLOR";
+	if (ClrObj == BLACK) return "BLACK";
+	else if (ClrObj == WHITE) return "WHITE";
+	else if (ClrObj == RED) return "RED";
+	else if (ClrObj == GREEN) return "GREEN";
+	else if (ClrObj == BLUE) return "BLUE";
+	else if (ClrObj == PINK) return "PINK";
+	else if (ClrObj == PURPLE) return "PRUPLE";
+	else return "BLUE";
 }
-
+//Convert from string to color object to load
+color ApplicationManager::ColorObject(string ClrStr) const
+{
+	if (ClrStr == "BLACK") return BLACK;
+	else if (ClrStr == "WHITE") return WHITE;
+	else if (ClrStr == "RED") return RED;
+	else if (ClrStr == "GREEN") return GREEN;
+	else if (ClrStr == "BLUE") return BLUE;
+	else if (ClrStr == "PINK") return PINK;
+	else if (ClrStr == "PURPLE") return PURPLE;
+	return BLUE;
+}
 
 void ApplicationManager::SaveAll(ofstream& Out)   //Call the Save function for each Figure
 {
@@ -220,7 +238,15 @@ GUI* ApplicationManager::GetGUI() const
 	return pGUI;
 }
 
-
+void ApplicationManager::ClearFigList()
+{
+	for (int i = 0; i < FigCount; i++)
+	{
+		delete FigList[i];
+		FigList[i] = NULL;
+	}
+	FigCount = 0;
+}
 
 
 CFigure* ApplicationManager::getSelected()
@@ -320,8 +346,7 @@ ApplicationManager::~ApplicationManager()
 {
 	for (int i = 0; i < FigCount; i++)
 		delete FigList[i];
-	delete pGUI;
-
+		delete pGUI;
 }
 
 
@@ -333,7 +358,7 @@ int ApplicationManager::DisplayMessageBox()
 {
 	int msgboxID = MessageBox(
 		NULL,
-		"You didn't save the drawing\nAre you sure?",
+		"You didn't save the drawing\nClick cancel to save\nOk to exit",
 		"Exit",
 		MB_OKCANCEL | MB_DEFBUTTON2 | MB_ICONWARNING
 	);
@@ -341,14 +366,15 @@ int ApplicationManager::DisplayMessageBox()
 	switch (msgboxID)
 	{
 	case IDCANCEL:
-		pGUI->PrintMessage("The app should keep alive");
-		break;
+				break;
 	case IDOK:
-
-		pGUI->PrintMessage("The app should cancel");
 		exit(0);
 		break;
 	}
+	//thia will execute the save and then exit immediatelly
+	Action* newAct = new ActionSave(this, FigCount, true);
+	ExecuteAction(newAct);
+
 	
 	return msgboxID;
 }

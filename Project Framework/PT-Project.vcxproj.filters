@@ -58,6 +58,7 @@
     <ClCompile Include="ApplicationManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Actions\changeBgColor.cpp" />
+    <ClCompile Include="Actions\ActionLoad.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\ActionAddEllipse.h" />
@@ -102,7 +103,11 @@
     <ClInclude Include="GUI\UI_Info.h" />
     <ClInclude Include="ApplicationManager.h" />
     <ClInclude Include="DEFS.h" />
+<<<<<<< HEAD
     <ClInclude Include="Actions\changeBgColor.h" />
+=======
+    <ClInclude Include="Actions\ActionLoad.h" />
+>>>>>>> c9adb2d73c3444b201ebea13ee1b24efecec382f
   </ItemGroup>
   <ItemGroup>
     <None Include="PT-Project.vcproj" />

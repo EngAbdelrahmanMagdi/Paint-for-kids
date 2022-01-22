@@ -16,6 +16,7 @@ protected:
 
 public:
 	CFigure(GfxInfo FigureGfxInfo);
+	CFigure();
 	void SetSelected(bool);	//select/unselect the figure
 	bool IsSelected() const;	//check whether fig is selected
 
@@ -34,9 +35,10 @@ public:
 	//virtual void Rotate() = 0;	//Rotate the figure
 	//virtual void Resize() = 0;	//Resize the figure
 	//virtual void Move() = 0;		//Move the figure
-	string ColorString(color c) const;
+	string ColorString(color) const;
+	color ColorObject(string) const;
 	virtual void Save(ofstream &OutFile) = 0;	//Save the figure parameters to the file
-	//virtual void Load(ifstream &Infile) = 0;	//Load the figure parameters to the file
+	virtual void Load(ifstream &Infile) = 0;	//Load the figure parameters to the file
 
 	//virtual void PrintInfo(Output* pOut) = 0;	//print all figure info on the status bar
 };

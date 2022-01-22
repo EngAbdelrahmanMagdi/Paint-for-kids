@@ -31,6 +31,7 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 
 //TODO: Add more items names here
 	ITM_SAVE,//save item
+	ITM_LOAD,//load a graph
 	ITM_TO_PLAY,
 	ITM_EXIT,		//Exit item
 

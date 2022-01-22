@@ -1,7 +1,5 @@
 #include "changeCurrentFillColor.h"
-
 #include "..\ApplicationManager.h"
-
 #include "..\GUI\GUI.h"
 
 
@@ -30,39 +28,14 @@ void changeCurrentFillColor::Execute()
 		ClickedItemOrder = (P1.x / UI.MenuItemWidth);
 		switch (ClickedItemOrder)
 		{
-		case ITM_BLACK:
-			pGUI->setCrntFillColor(BLACK);
-			break;
-		case ITM_WHITE:
-			pGUI->setCrntFillColor(WHITE);
-
-			break;
-		case ITM_RED:
-			pGUI->setCrntFillColor(RED);
-
-			break;
-		case ITM_GREEN:
-			pGUI->setCrntFillColor(GREEN);
-
-			break;
-		case ITM_BLUE:
-			pGUI->setCrntFillColor(BLUE);
-
-			break;
-		case ITM_PINK:
-			pGUI->setCrntFillColor(PINK);
-
-			break;
-		case ITM_PURPLE:
-			pGUI->setCrntFillColor(PURPLE);
-
-			break;
-
-		}
-
-
+		case ITM_BLACK: pGUI->setCrntFillColor(BLACK);	pGUI->PrintMessage("Black");	break;
+		case ITM_WHITE:	pGUI->setCrntFillColor(WHITE);	pGUI->PrintMessage("White");	break;
+		case ITM_RED:	pGUI->setCrntFillColor(RED);	pGUI->PrintMessage("Red");		break;
+		case ITM_GREEN:	pGUI->setCrntFillColor(GREEN);	pGUI->PrintMessage("Green");	break;
+		case ITM_BLUE:	pGUI->setCrntFillColor(BLUE);	pGUI->PrintMessage("Blue");		break;
+		case ITM_PINK:	pGUI->setCrntFillColor(PINK);	pGUI->PrintMessage("Pink");		break;
+		case ITM_PURPLE:pGUI->setCrntFillColor(PURPLE);	pGUI->PrintMessage("Purple");	break;
+		};
 	}
 	pGUI->CreateDrawToolBar();
-	pGUI->ClearStatusBar();
-
 }

@@ -14,6 +14,7 @@ CFigure::CFigure(GfxInfo FigureGfxInfo)
 
 	}
 }
+CFigure::CFigure() {};
 
 void CFigure::SetSelected(bool s)
 {
@@ -36,16 +37,26 @@ void CFigure::ChngFillClr(color Fclr)
 	FigGfxInfo.FillClr = Fclr;
 }
 
-string CFigure::ColorString(color c) const  //Convert from Color Type to String Type
+string CFigure::ColorString(color ClrObj) const  //Convert from Color Type to String Type
 {
-	if (c == BLACK) return "BLACK";
-	else if (c == WHITE) return "WHITE";
-	else if (c == BLUE) return "BLUE";
-	else if (c == RED) return "RED";
-	else if (c == YELLOW) return "YELLOW";
-	else if (c == GREEN) return "GREEN";
-	else if (c == LIGHTGOLDENRODYELLOW) return "LIGHTGOLDENRODYELLOW";
-	else if (c == MAGENTA) return "MAGENTA";
-	else if (c == TURQUOISE) return "TURQUOISE";
-	return "NO_COLOR";
+	if (ClrObj == BLACK) return "BLACK";
+	else if (ClrObj == WHITE) return "WHITE";
+	else if (ClrObj == RED) return "RED";
+	else if (ClrObj == GREEN) return "GREEN";
+	else if (ClrObj == BLUE) return "BLUE";
+	else if (ClrObj == PINK) return "PINK";
+	else if (ClrObj == PURPLE) return "PRUPLE";
+	else return "BLUE";
+}
+
+color CFigure::ColorObject(string ClrStr) const  //Convert from string to color object
+{
+	if (ClrStr == "BLACK") return BLACK;
+	else if (ClrStr == "WHITE") return WHITE;
+	else if (ClrStr == "RED") return RED;
+	else if (ClrStr == "GREEN") return GREEN;
+	else if (ClrStr == "BLUE") return BLUE;
+	else if (ClrStr == "PINK") return PINK;
+	else if (ClrStr == "PURPLE") return PURPLE;
+	return BLUE;
 }

@@ -32,7 +32,8 @@ public:
 	int DisplayMessageBox(); 
 
 	//--Actions-Related-To-Save-And-Load
-	string colorString(color c) const;
+	string colorString(color) const;
+	color ColorObject(string) const;
 	void SaveAll(ofstream& Out);
 
 	// -- Figures Management Functions
@@ -41,6 +42,7 @@ public:
 
 	// -- Interface Management Functions	
 	GUI* GetGUI() const; //Return pointer to the interface
+	void ClearFigList();
 	void UpdateInterface() const;	//Redraws all the drawing window	
 	int getSelectedFigure();// Return selected Figure
 	void SendToBack(int selectedIndex); // Action Send to back 
