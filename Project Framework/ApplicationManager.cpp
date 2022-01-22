@@ -81,9 +81,11 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 	case BRNG_FRNT:		newAct = new ActionBringFront(this);		break;
 	case TO_PLAY:		newAct = new ActionToPlay(this);			break;
 	case TO_DRAW:		newAct = new ActionToDraw(this);			break;
-	case STATUS:		return NULL;								break; //a click on the status bar ==> no action
 	case EXIT:			DisplayMessageBox();						break;
-		/*
+	case STATUS:		return NULL;								break; //a click on the status bar ==> no action
+		/*m
+		* 
+		* //this is the old implementation of the exit button
 		pGUI->PrintMessage("Are you sure? if you want to save your grapth write y");
 		answer = pGUI->GetSrting();
 		if (answer == "Y" || answer == "y")

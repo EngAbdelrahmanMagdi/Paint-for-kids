@@ -20,7 +20,7 @@ GUI::GUI()
 	UI.FillColor = GREEN;	//Filling color
 	UI.MsgColor = WHITE;		//Messages color
 	UI.BkGrndColor = WHITE;	//Background color
-	UI.HighlightColor = MAGENTA;	//This color should NOT be used to draw figures. use if for highlight only
+	UI.HighlightColor = KHAKI;	//This color should NOT be used to draw figures. use if for highlight only
 	UI.StatusBarColor = LIGHTSLATEGRAY;
 	UI.PenWidth = 3;	//width of the figures frames
 

@@ -14,6 +14,8 @@ public:
 	static int HexID;
 	CHexagon(Point _P1, Point _P2, GfxInfo FigureGfxInfo);
 	CHexagon();
+	string PointToString(Point);
+	Point StringToPoint(string);
 	void Save(ofstream&);
 	void Load(ifstream&);
 	virtual void DrawMe(GUI* pOut) const;

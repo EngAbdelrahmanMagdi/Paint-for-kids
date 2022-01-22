@@ -1,4 +1,7 @@
 #include "CHexagon.h"
+#include <iostream>
+#include <string>
+using namespace std;
 
 CHexagon::CHexagon(Point _P1, Point _P2, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 {
@@ -13,13 +16,12 @@ CHexagon::CHexagon() {}; //default constructor
 int CHexagon::HexID = 0;
 
 void CHexagon::Save(ofstream& OutFile) {
-
-
 	OutFile << "CHexagon\t"
 		<< this->ID << "\t"
-		<< "XS" << "\t"
-		<< "YS" << "\t"
-		<< 6 << "\t"
+		<< this->P1.x << "\t"
+		<< this->P1.y << "\t"
+		<< this->P2.x << "\t"
+		<< this->P2.y << "\t"
 
 		<< this->ColorString(this->FigGfxInfo.DrawClr) << "\t";
 
@@ -28,7 +30,31 @@ void CHexagon::Save(ofstream& OutFile) {
 	else
 		OutFile << "NO_FILL\n";
 }
-void CHexagon::Load(ifstream& Infile) {}
+void CHexagon::Load(ifstream& Infile) {
+	string s;
+	Infile >> ID
+		>> P1.x
+		>> P1.y
+		>> P2.x
+		>> P2.y;
+
+	Infile >> s;
+	FigGfxInfo.DrawClr = this->ColorObject(s);
+
+	Infile >> s;
+	if (s == "NO_FILL")
+		FigGfxInfo.isFilled = false;
+	else
+	{
+		FigGfxInfo.FillClr = this->ColorObject(s);
+		FigGfxInfo.isFilled = true;
+	}
+	this->FigGfxInfo.BorderWdth = 3; //pass 3 as default value for borderWidth
+	this->SetSelected(false);
+
+	P2.x = (P1.x + P2.x) * 0.5;
+	radius = sqrt(pow(P1.x - P2.x, 2) + pow(P1.y - P2.y, 2)) * 0.5;
+}
 
 void CHexagon::DrawMe(GUI* pGUI) const
 {

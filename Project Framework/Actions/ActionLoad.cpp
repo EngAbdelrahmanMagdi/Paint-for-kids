@@ -59,7 +59,7 @@ void ActionLoad::Execute()
 				string shapeType;
 				InputFile >> shapeType;
 				if (shapeType == "CSquare") {
-					pFig = new CSquare();
+					pFig = new CSquare;
 				}
 				else if (shapeType == "CEllipse") {
 					pFig = new CEllipse;
