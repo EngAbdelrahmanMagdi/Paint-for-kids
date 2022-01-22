@@ -115,22 +115,13 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 	case TO_DRAW:
 		newAct = new ActionToDraw(this);
 		break;
-	case EXIT: 
-	case DRAW_SQUARE:	newAct = new ActionAddSquare(this);			break;
-	case DRAW_ELPS:		newAct = new ActionAddEllipse(this);		break;
-	case DRAW_HEX:		newAct = new ActionAddHexagon(this);		break;
-	case CHNG_DRAW_CLR:	newAct = new changeCrntDrawColor(this);		break;
-	case CHNG_FILL_CLR:	newAct = new changeCurrentFillColor(this);	break;
-	case SAVE:			newAct = new ActionSave(this,FigCount,0);	break; //0 is a flag to fire exit on save
-	case LOAD:			newAct = new ActionLoad(this,FigCount);		break;
-	case SELECT:		newAct = new Select(this);					break;
-	case DEL:			newAct = new Delete(this);					break;
-	case SEND_BACK:		newAct = new ActionSendBack(this);			break;
-	case BRNG_FRNT:		newAct = new ActionBringFront(this);		break;
-	case TO_PLAY:		newAct = new ActionToPlay(this);			break;
-	case TO_DRAW:		newAct = new ActionToDraw(this);			break;
-	case EXIT:			DisplayMessageBox();						break;
-	case STATUS:		return NULL;								break; //a click on the status bar ==> no action
+	
+	case EXIT:	
+		DisplayMessageBox();	
+		break;
+	case STATUS:	
+		return NULL;				
+		break; //a click on the status bar ==> no action
 		/*m
 		* 
 		* //this is the old implementation of the exit button
