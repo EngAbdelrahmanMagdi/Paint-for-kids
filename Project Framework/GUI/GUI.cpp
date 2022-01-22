@@ -6,18 +6,10 @@ GUI::GUI()
 {
 	//Initialize user interface parameters
 	UI.InterfaceMode = MODE_DRAW;
-
-<<<<<<< HEAD
-	UI.width = 1450; //1300
-	UI.height = 750; //700
-	UI.wx = 5;
-	UI.wy = 5;
-=======
 	UI.width = 1500; //1300
 	UI.height = 900; //700
 	UI.wx = 200;
 	UI.wy = 100;
->>>>>>> c9adb2d73c3444b201ebea13ee1b24efecec382f
 
 
 	UI.StatusBarHeight = 50;
@@ -98,12 +90,8 @@ ActionType GUI::MapInputToActionType() const
 			case ITM_HEXAGON: return DRAW_HEX;
 			case DRAW_CLR:return CHNG_DRAW_CLR;
 			case FILL_CLR: return CHNG_FILL_CLR;
-<<<<<<< HEAD
 			case BG_CHANGE: return CHNG_BK_CLR;
-
-=======
 			case ITM_LOAD: return LOAD;
->>>>>>> c9adb2d73c3444b201ebea13ee1b24efecec382f
 			case ITM_SAVE: return SAVE;
 			case ITM_EXIT: return EXIT;
 			case ITM_Select: return SELECT;

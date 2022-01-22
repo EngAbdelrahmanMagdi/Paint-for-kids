@@ -71,12 +71,9 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 	case DRAW_SQUARE:
 		newAct = new ActionAddSquare(this);
 		break;
-
 	case DRAW_ELPS:
 		newAct = new ActionAddEllipse(this);
-
 		break;
-	
   	case DRAW_HEX:
 		newAct = new ActionAddHexagon(this);
 		break;
@@ -84,7 +81,6 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 		newAct = new changeCrntDrawColor(this);
 		break;
 	case CHNG_FILL_CLR:
-		
 		newAct = new changeCurrentFillColor(this);
 		break;
 	case CHNG_BK_CLR:
@@ -93,17 +89,13 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 	case SAVE:
 		newAct = new ActionSave(this,FigCount,0);
 		break;
-
-
 	case SELECT:
 		newAct = new Select(this);
 		break;
-
 	case DEL:
 		newAct = new Delete(this);
 		break;
 	case SEND_BACK:	//Send a figure to the back of all figures
-
 		newAct = new ActionSendBack(this);
 		break;
 	case BRNG_FRNT:
@@ -257,23 +249,6 @@ int ApplicationManager::getSelectedFigure()
 	return -1;
 }
 
-/*void ApplicationManager::DeleteFigure()
-{
-
-	for (int i = 0; i < FigCount; i++)
-		if (FigList[i]->IsSelected()) {
-			//delete FigList[i];
-			CFigure* tmp = FigList[i];
-			FigList[i] = FigList[FigCount];
-			FigList[FigCount] = tmp;
-			delete FigList[FigCount];
-			FigList[FigCount] = NULL;
-
-
-		}
-
-}
-*/
 // -- For  Figure Deleted 
 int ApplicationManager::DeleteFigure()
 {
