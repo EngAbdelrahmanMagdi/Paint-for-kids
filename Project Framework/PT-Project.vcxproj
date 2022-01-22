@@ -135,6 +135,7 @@
     <ClCompile Include="Actions\ActionSave.cpp" />
     <ClCompile Include="Actions\ActionSendBack.cpp" />
     <ClCompile Include="Actions\ActionSendFront.cpp" />
+    <ClCompile Include="Actions\changeBgColor.cpp" />
     <ClCompile Include="Actions\changeCrntDrawColor.cpp" />
     <ClCompile Include="Actions\changeCurrentFillColor.cpp" />
     <ClCompile Include="Actions\Delete.cpp" />
@@ -193,6 +194,7 @@
     <ClInclude Include="Actions\ActionSave.h" />
     <ClInclude Include="Actions\ActionSendBack.h" />
     <ClInclude Include="Actions\ActionSendFront.h" />
+    <ClInclude Include="Actions\changeBgColor.h" />
     <ClInclude Include="Actions\changeCrntDrawColor.h" />
     <ClInclude Include="Actions\changeCurrentFillColor.h" />
     <ClInclude Include="Actions\Delete.h" />

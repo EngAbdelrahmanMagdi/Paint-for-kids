@@ -14,7 +14,7 @@
 #include <string.h>
 #include "Actions\changeCrntDrawColor.h"
 #include "Actions\changeCurrentFillColor.h"
-
+#include "Actions\changeBgColor.h"
 
 
 
@@ -83,7 +83,11 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 		newAct = new changeCrntDrawColor(this);
 		break;
 	case CHNG_FILL_CLR:
+		
 		newAct = new changeCurrentFillColor(this);
+		break;
+	case CHNG_BK_CLR:
+		newAct = new changeBgColor(this);
 		break;
 	case SAVE:
 		newAct = new ActionSave(this,FigCount,0);
