@@ -11,8 +11,8 @@ public:
 	ActionLoad(ApplicationManager* pApp, int FigCount);
 
 	virtual void ReadActionParameters();
-
-	color ActionLoad::getColorObject(string name)const;
+	bool ReadFileLocation(char[]);
+	color getColorObject(string name)const;
 
 	virtual void Execute();
 
