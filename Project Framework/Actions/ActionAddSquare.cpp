@@ -29,11 +29,24 @@ void ActionAddSquare::Execute()
 
 	pGUI->PrintMessage("New Square: Click at first point");
 	//Read 1st point and store in point P1
+	/*do {
+		pGUI->GetPointClicked(P1.x, P1.y);
+	} while (! pGUI->isPointInDrawingArea(P1.x, P1.y));*/
+	
+
 	pGUI->GetPointClicked(P1.x, P1.y);
+	if (!pGUI->isPointInDrawingArea(P1.x, P1.y)) {
+		pGUI->PrintMessage("New Square: Action aborted, can't draw outside the drawing area");
+		return;
+	}
 
 	pGUI->PrintMessage("New Square: Click at second point");
 	//Read 2nd point and store in point P2
 	pGUI->GetPointClicked(P2.x, P2.y);
+	if (!pGUI->isPointInDrawingArea(P2.x, P2.y)) {
+		pGUI->PrintMessage("New Square: Action aborted, can't draw outside the drawing area");
+		return;
+	}
 
 	pGUI->ClearStatusBar();
 

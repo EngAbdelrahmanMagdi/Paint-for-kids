@@ -15,7 +15,6 @@ enum ActionType //The actions supported (you can add more if needed)
 	CHNG_BK_CLR,	//Change background color
 	DEL,			//Delete a figure(s)
 	MOVE,			//Move a figure(s)
-	RESIZE,			//Resize a figure(s)
 	ROTATE,			//Rotate a figure(s)
 	SEND_BACK,		//Send a figure to the back of all figures
 	BRNG_FRNT,		//Bring a figure to the front of all figures
@@ -27,6 +26,10 @@ enum ActionType //The actions supported (you can add more if needed)
 	PLAYING_AREA,
 	STATUS,			//A click on the status bar
 	EMPTY,			//A click on empty place in the toolbar
+	QUARTERED_RESIZE,
+	HALFED_RESIZE,
+	DOUBLED_RESIZE,
+	QUADRUPLE_RESIZED,
 
 	TO_DRAW,		//Switch interface to Draw mode
 	TO_PLAY			//Switch interface to Play mode
@@ -46,6 +49,16 @@ struct GfxInfo	//Graphical info of each figure (you may add more members)
 	bool isFilled;	//Figure Filled or not
 	int BorderWdth;	//Width of figure borders
 
+};
+
+struct HexagonStruct {
+
+	Point P1;
+	Point P2;
+	int radius; 
+	int XS[6];
+	int YS[6];
+	bool fitInBoundary;
 };
 
 #endif

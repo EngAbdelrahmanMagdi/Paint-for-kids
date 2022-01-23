@@ -16,6 +16,7 @@
 #include "Actions\changeCrntDrawColor.h"
 #include "Actions\changeCurrentFillColor.h"
 #include "Actions\changeBgColor.h"
+#include "Actions\ActionResizeFigure.h"
 
 
 
@@ -107,7 +108,21 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 	case TO_DRAW:
 		newAct = new ActionToDraw(this);
 		break;
-	case LOAD:		newAct = new ActionLoad(this, FigCount);		break;
+	case QUARTERED_RESIZE:
+		newAct = new ActionResizeFigure(this, 0.25);
+		break;
+	case HALFED_RESIZE:
+		newAct = new ActionResizeFigure(this, 0.5);
+		break;
+	case DOUBLED_RESIZE:
+		newAct = new ActionResizeFigure(this, 2);
+		break;
+	case QUADRUPLE_RESIZED:
+		newAct = new ActionResizeFigure(this, 4);
+		break;
+	case LOAD:		
+		newAct = new ActionLoad(this, FigCount);
+		break;
 	case EXIT:	
 		DisplayMessageBox();	
 		break;
@@ -211,6 +226,8 @@ void ApplicationManager::SaveAll(ofstream& Out)   //Call the Save function for e
 //Draw all figures on the user interface
 void ApplicationManager::UpdateInterface() const
 {
+	pGUI->ClearDrawArea();
+
 	for (int i = 0; i < FigCount; i++)
 		FigList[i]->DrawMe(pGUI);		//Call Draw function (virtual member fn)
 }
@@ -235,7 +252,7 @@ void ApplicationManager::ClearFigList()
 CFigure* ApplicationManager::getSelected()
 {
 	int index = getSelectedFigure();
-	if (index >= 0)
+	if (index >= 0 && index < FigCount)
 		return FigList[index];
 	return NULL;
 }
@@ -248,6 +265,14 @@ int ApplicationManager::getSelectedFigure()
 			return i;
 	return -1;
 }
+
+//CFigure* ApplicationManager::getFigureAt(int index)
+//{
+//	if (index >= 0 && index < FigCount)
+//		return FigList[index];
+//	else
+//		return NULL;
+//}
 
 // -- For  Figure Deleted 
 int ApplicationManager::DeleteFigure()

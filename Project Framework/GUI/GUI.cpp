@@ -7,7 +7,7 @@ GUI::GUI()
 	//Initialize user interface parameters
 	UI.InterfaceMode = MODE_DRAW;
 	UI.width = 1500; //1300
-	UI.height = 900; //700
+	UI.height = 600; //700
 	UI.wx = 200;
 	UI.wy = 100;
 
@@ -99,8 +99,13 @@ ActionType GUI::MapInputToActionType() const
 			case ITM_Send_Back: return SEND_BACK;
 			case ITM_Send_Front: return BRNG_FRNT;
 			case ITM_TO_PLAY: return TO_PLAY;
+			case ITM_RESIZE_QUARTER: return QUARTERED_RESIZE;
+			case ITM_RESIZE_HALF: return HALFED_RESIZE;
+			case ITM_RESIZE_DOUBLED: return DOUBLED_RESIZE;
+			case ITM_RESIZE_QUADRUPLE: return QUADRUPLE_RESIZED;
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
+
 		}
 
 		//[2] User clicks on the drawing area
@@ -190,7 +195,13 @@ void GUI::CreateDrawToolBar() const
 	MenuItemImages[ITM_SAVE] = "images\\MenuItems\\Menu_save.jpg";
 	MenuItemImages[ITM_LOAD] = "images\\MenuItems\\Menu_Load.jpg";
 	MenuItemImages[ITM_TO_PLAY] = "images\\MenuItems\\playm.jpg";
+	MenuItemImages[ITM_RESIZE_QUARTER] = "images\\MenuItems\\playm.jpg";
+	MenuItemImages[ITM_RESIZE_HALF] = "images\\MenuItems\\playm.jpg";
+	MenuItemImages[ITM_RESIZE_DOUBLED] = "images\\MenuItems\\playm.jpg";
+	MenuItemImages[ITM_RESIZE_QUADRUPLE] = "images\\MenuItems\\playm.jpg";
 	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
+	
+
 
 	//TODO: Prepare images for each menu item and add it to the list
 

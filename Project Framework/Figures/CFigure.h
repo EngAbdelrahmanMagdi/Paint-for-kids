@@ -33,7 +33,7 @@ public:
 
 
 	//virtual void Rotate() = 0;	//Rotate the figure
-	//virtual void Resize() = 0;	//Resize the figure
+	virtual bool Resize(float factor, GUI* pGUI) = 0;	//Resize the figure
 	//virtual void Move() = 0;		//Move the figure
 	string ColorString(color) const;
 	color ColorObject(string) const;

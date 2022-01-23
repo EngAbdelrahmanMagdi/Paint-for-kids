@@ -4,9 +4,11 @@
     <ClCompile Include="Actions\ActionAddEllipse.cpp" />
     <ClCompile Include="Actions\ActionAddHexagon.cpp" />
     <ClCompile Include="Actions\ActionExit.cpp" />
+    <ClCompile Include="Actions\ActionLoad.cpp" />
     <ClCompile Include="Actions\ActionSave.cpp" />
     <ClCompile Include="Actions\ActionSendBack.cpp" />
     <ClCompile Include="Actions\ActionSendFront.cpp" />
+    <ClCompile Include="Actions\changeBgColor.cpp" />
     <ClCompile Include="Actions\changeCrntDrawColor.cpp" />
     <ClCompile Include="Actions\changeCurrentFillColor.cpp" />
     <ClCompile Include="Actions\Delete.cpp" />
@@ -57,16 +59,17 @@
     <ClCompile Include="GUI\GUI.cpp" />
     <ClCompile Include="ApplicationManager.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Actions\changeBgColor.cpp" />
-    <ClCompile Include="Actions\ActionLoad.cpp" />
+    <ClCompile Include="Actions\ActionResizeFigure.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\ActionAddEllipse.h" />
     <ClInclude Include="Actions\ActionAddHexagon.h" />
     <ClInclude Include="Actions\ActionExit.h" />
+    <ClInclude Include="Actions\ActionLoad.h" />
     <ClInclude Include="Actions\ActionSave.h" />
     <ClInclude Include="Actions\ActionSendBack.h" />
     <ClInclude Include="Actions\ActionSendFront.h" />
+    <ClInclude Include="Actions\changeBgColor.h" />
     <ClInclude Include="Actions\changeCrntDrawColor.h" />
     <ClInclude Include="Actions\changeCurrentFillColor.h" />
     <ClInclude Include="Actions\Delete.h" />
@@ -103,11 +106,7 @@
     <ClInclude Include="GUI\UI_Info.h" />
     <ClInclude Include="ApplicationManager.h" />
     <ClInclude Include="DEFS.h" />
-<<<<<<< HEAD
-    <ClInclude Include="Actions\changeBgColor.h" />
-=======
-    <ClInclude Include="Actions\ActionLoad.h" />
->>>>>>> c9adb2d73c3444b201ebea13ee1b24efecec382f
+    <ClInclude Include="Actions\ActionResizeFigure.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PT-Project.vcproj" />

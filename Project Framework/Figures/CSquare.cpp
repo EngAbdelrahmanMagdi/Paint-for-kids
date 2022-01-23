@@ -54,6 +54,32 @@ void CSquare::Load(ifstream& Infile) {
 
 }
 
+bool CSquare::Resize(float factor, GUI* pGUI) {
+	int centerOfX = TopLeftCorner.x + (length / 2);
+	int centerOfY = (TopLeftCorner.y + (length / 2));
+	
+	int resizedLength = length * factor;
+	int resizedTopLeftX = centerOfX - (resizedLength/2);
+	int resizedTopLeftY = centerOfY - (resizedLength / 2);
+	int resizedBottomRightX = resizedLength + resizedTopLeftX;
+	int resizedBottomRightY = resizedLength + resizedTopLeftY;
+	//x > 0 && x < UI.width
+		//&& y > UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight;
+
+
+	if (resizedTopLeftX > 0 && resizedTopLeftX < UI.width
+		&& resizedTopLeftY > UI.ToolBarHeight && resizedTopLeftY < UI.height - UI.StatusBarHeight
+		&& resizedBottomRightX > 0 && resizedBottomRightX < UI.width
+		&& resizedBottomRightY > UI.ToolBarHeight && resizedBottomRightY < UI.height - UI.StatusBarHeight) {
+		length = resizedLength;
+		TopLeftCorner.x = resizedTopLeftX;
+		TopLeftCorner.y = resizedTopLeftY;
+		
+		return true;
+	}
+	return false;
+
+}
 
 bool CSquare::PointInShape(int x, int y) const {
 	return (x >= TopLeftCorner.x && x <= TopLeftCorner.x + length)

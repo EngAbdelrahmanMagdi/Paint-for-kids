@@ -45,6 +45,7 @@ public:
 	void ClearFigList();
 	void UpdateInterface() const;	//Redraws all the drawing window	
 	int getSelectedFigure();// Return selected Figure
+	//CFigure* getFigureAt(int index);
 	void SendToBack(int selectedIndex); // Action Send to back 
 	void BringToFront(int selectedIndex);// Action Bring to Forward 
 	int DeleteFigure(); //// Action Delete Figures  

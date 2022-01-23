@@ -1,4 +1,6 @@
 #include "CEllipse.h"
+#include <iostream>
+#include <fstream>
 
 CEllipse::CEllipse(Point P1, Point P2, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 {
@@ -56,6 +58,33 @@ void CEllipse::Load(ifstream& Infile) {
 	this->FigGfxInfo.BorderWdth = 3; //pass 3 as a default value for borderWidth
 	this->SetSelected(false);
 };
+
+bool CEllipse::Resize(float factor, GUI* pGUI) {
+	int centerOfX = (bottomRight.x + topLeft.x) / 2;
+	int centerOfY = (bottomRight.y + topLeft.y) / 2;
+	int HorizontalSpace = bottomRight.x - topLeft.x;
+	int VerticalSpace = bottomRight.y - topLeft.y;
+	HorizontalSpace *= factor;
+	VerticalSpace *= factor;
+	int resizedBottomRightX = centerOfX + (HorizontalSpace / 2);
+	int resizedBottomRightY = centerOfY + (VerticalSpace / 2); 
+	int resizedTopLeftX = centerOfX - (HorizontalSpace / 2); 
+	int resizedTopLeftY = centerOfY - (VerticalSpace / 2);
+
+	
+
+	if (resizedTopLeftX > 0 && resizedTopLeftX < UI.width && resizedTopLeftY > UI.ToolBarHeight && resizedTopLeftY < UI.height - UI.StatusBarHeight
+		&& resizedBottomRightX > 0 && resizedBottomRightX < UI.width && resizedBottomRightY > UI.ToolBarHeight && resizedBottomRightY < UI.height - UI.StatusBarHeight) {
+		
+		topLeft.x = resizedTopLeftX;
+		topLeft.y = resizedTopLeftY;
+		bottomRight.x = resizedBottomRightX;
+		bottomRight.y = resizedBottomRightY;
+		return true;
+	}
+	return false; 
+
+}
 
 bool CEllipse::PointInShape(int x, int y) const {
 	return (x >= topLeft.x && x <= bottomRight.x)

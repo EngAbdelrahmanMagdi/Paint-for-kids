@@ -17,6 +17,7 @@ public:
 	void Save(ofstream& OutFile);
 	void Load(ifstream&);
 	virtual bool PointInShape(int x, int y) const;
+	bool Resize(float factor, GUI* pGUI);
 };
 
 #endif
