@@ -50,6 +50,8 @@ public:
 	void BringToFront(int selectedIndex);// Action Bring to Forward 
 	int DeleteFigure(); //// Action Delete Figures  
 	void shiftFigList(int _figCount); // After delete figure shift elements and delete null
+	CFigure* DrawnFigs(int i) const;
+	int getFigCount() const;
 	CFigure* getSelected();
 };
 

@@ -9,7 +9,8 @@ class CFigure
 {
 protected:
 	int ID;		//Each figure has an ID
-	bool Selected;	//true if the figure is selected.
+	bool Selected;//true if the figure is selected.
+	bool PlayHidden;	
 	GfxInfo FigGfxInfo;	//Figure graphis info
 
 	/// Add more parameters if needed.
@@ -39,6 +40,9 @@ public:
 	color ColorObject(string) const;
 	virtual void Save(ofstream &OutFile) = 0;	//Save the figure parameters to the file
 	virtual void Load(ifstream &Infile) = 0;	//Load the figure parameters to the file
+	void Show();
+	void Hide();
+	bool HiddenStatus();
 
 	//virtual void PrintInfo(Output* pOut) = 0;	//print all figure info on the status bar
 };

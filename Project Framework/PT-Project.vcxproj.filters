@@ -60,6 +60,7 @@
     <ClCompile Include="ApplicationManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Actions\ActionResizeFigure.cpp" />
+    <ClCompile Include="Actions\PickByType.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\ActionAddEllipse.h" />
@@ -107,6 +108,7 @@
     <ClInclude Include="ApplicationManager.h" />
     <ClInclude Include="DEFS.h" />
     <ClInclude Include="Actions\ActionResizeFigure.h" />
+    <ClInclude Include="Actions\PickByType.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PT-Project.vcproj" />

@@ -17,6 +17,8 @@
 #include "Actions\changeCurrentFillColor.h"
 #include "Actions\changeBgColor.h"
 #include "Actions\ActionResizeFigure.h"
+#include "Actions\PickByType.h"
+
 
 
 
@@ -123,6 +125,10 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 	case LOAD:		
 		newAct = new ActionLoad(this, FigCount);
 		break;
+		//Play Mode Actions//
+	case P_H_TYPE:
+		newAct = new PickByType(this);
+		break;
 	case EXIT:	
 		DisplayMessageBox();	
 		break;
@@ -217,7 +223,18 @@ void ApplicationManager::SaveAll(ofstream& Out)   //Call the Save function for e
 	for (int i = 0; i < FigCount; ++i)
 		FigList[i]->Save(Out);
 }
-
+//Transfer figures in FigList to playmode
+CFigure* ApplicationManager::DrawnFigs(int i) const
+{
+	return FigList[i];
+}
+////////////////////////////////////////////////////////////////////////////////////
+//Transfer FigCount to playmode to avoid unnessecary loops
+int ApplicationManager::getFigCount() const
+{
+	return FigCount;
+}
+////////////////////////////////////////////////////////////////////////////////////
 
 //==================================================================================//
 //							Interface Management Functions							//
@@ -227,9 +244,11 @@ void ApplicationManager::SaveAll(ofstream& Out)   //Call the Save function for e
 void ApplicationManager::UpdateInterface() const
 {
 	pGUI->ClearDrawArea();
-
 	for (int i = 0; i < FigCount; i++)
-		FigList[i]->DrawMe(pGUI);		//Call Draw function (virtual member fn)
+	{
+		if (FigList[i]->HiddenStatus() == false)
+			FigList[i]->DrawMe(pGUI);		//Call Draw function (virtual member fn)
+	}		//Call Draw function (virtual member fn)
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //Return a pointer to the interface

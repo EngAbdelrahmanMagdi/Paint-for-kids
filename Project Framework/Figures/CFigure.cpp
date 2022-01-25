@@ -1,9 +1,17 @@
 #include "CFigure.h"
 
+CFigure::CFigure()
+{
+	Selected = false;
+	PlayHidden = false;
+}
+
+
 CFigure::CFigure(GfxInfo FigureGfxInfo)
 {
 	FigGfxInfo = FigureGfxInfo;	//Default status is non-filled.
 	Selected = false;
+	PlayHidden = false;
 	if (UI.filled_OR_not) {
 
 		FigGfxInfo.isFilled = true;
@@ -13,8 +21,9 @@ CFigure::CFigure(GfxInfo FigureGfxInfo)
 		FigGfxInfo.isFilled = false;
 
 	}
+	
 }
-CFigure::CFigure() {};
+
 
 void CFigure::SetSelected(bool s)
 {
@@ -59,4 +68,19 @@ color CFigure::ColorObject(string ClrStr) const  //Convert from string to color 
 	else if (ClrStr == "PINK") return PINK;
 	else if (ClrStr == "PURPLE") return PURPLE;
 	return BLUE;
+}
+//Hides Figures
+void CFigure::Hide()
+{
+	PlayHidden = true;
+}
+//Shows Figures
+void CFigure::Show()
+{
+	PlayHidden = false;
+}
+//Gives Current Status
+bool CFigure::HiddenStatus()
+{
+	return PlayHidden;
 }

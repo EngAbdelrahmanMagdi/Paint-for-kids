@@ -30,7 +30,7 @@ enum ActionType //The actions supported (you can add more if needed)
 	HALFED_RESIZE,
 	DOUBLED_RESIZE,
 	QUADRUPLE_RESIZED,
-
+	P_H_TYPE,
 	TO_DRAW,		//Switch interface to Draw mode
 	TO_PLAY			//Switch interface to Play mode
 
