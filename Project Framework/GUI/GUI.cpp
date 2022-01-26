@@ -7,14 +7,14 @@ GUI::GUI()
 	//Initialize user interface parameters
 	UI.InterfaceMode = MODE_DRAW;
 	UI.width = 1500; //1300
-	UI.height = 600; //700
+	UI.height = 800; //700
 	UI.wx = 200;
 	UI.wy = 100;
 
 
 	UI.StatusBarHeight = 50;
-	UI.ToolBarHeight = 75;
-	UI.MenuItemWidth = 75;
+	UI.ToolBarHeight = 77;
+	UI.MenuItemWidth = 73;
 
 	UI.DrawColor = BLUE;	//Drawing color
 	UI.FillColor = GREEN;	//Filling color
@@ -201,10 +201,10 @@ void GUI::CreateDrawToolBar() const
 	MenuItemImages[ITM_SAVE] = "images\\MenuItems\\Menu_save.jpg";
 	MenuItemImages[ITM_LOAD] = "images\\MenuItems\\Menu_Load.jpg";
 	MenuItemImages[ITM_TO_PLAY] = "images\\MenuItems\\playm.jpg";
-	MenuItemImages[ITM_RESIZE_QUARTER] = "images\\MenuItems\\playm.jpg";
-	MenuItemImages[ITM_RESIZE_HALF] = "images\\MenuItems\\playm.jpg";
-	MenuItemImages[ITM_RESIZE_DOUBLED] = "images\\MenuItems\\playm.jpg";
-	MenuItemImages[ITM_RESIZE_QUADRUPLE] = "images\\MenuItems\\playm.jpg";
+	MenuItemImages[ITM_RESIZE_QUARTER] = "images\\MenuItems\\onefourth.jpg";
+	MenuItemImages[ITM_RESIZE_HALF] = "images\\MenuItems\\half.jpg";
+	MenuItemImages[ITM_RESIZE_DOUBLED] = "images\\MenuItems\\2times.jpg";
+	MenuItemImages[ITM_RESIZE_QUADRUPLE] = "images\\MenuItems\\4times.JPG";
 	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
 	
 
