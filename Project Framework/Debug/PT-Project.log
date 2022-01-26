@@ -1,7 +1,7 @@
 ﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
   GUI.cpp
-D:\Ds github\Paint-for-kids\Project Framework\GUI\GUI.cpp(415,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-D:\Ds github\Paint-for-kids\Project Framework\GUI\GUI.cpp(421,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-D:\Ds github\Paint-for-kids\Project Framework\GUI\GUI.cpp(422,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-D:\Ds github\Paint-for-kids\Project Framework\GUI\GUI.cpp(423,22): warning C4305: '+=': truncation from 'double' to 'float'
-  PT-Project.vcxproj -> D:\Ds github\Paint-for-kids\Project Framework\Debug\PT Project.exe
+C:\Users\mahmoud\Desktop\PaintFinal\Paint-for-kids\Project Framework\GUI\GUI.cpp(415,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\mahmoud\Desktop\PaintFinal\Paint-for-kids\Project Framework\GUI\GUI.cpp(421,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\mahmoud\Desktop\PaintFinal\Paint-for-kids\Project Framework\GUI\GUI.cpp(422,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\mahmoud\Desktop\PaintFinal\Paint-for-kids\Project Framework\GUI\GUI.cpp(423,22): warning C4305: '+=': truncation from 'double' to 'float'
+  PT-Project.vcxproj -> C:\Users\mahmoud\Desktop\PaintFinal\Paint-for-kids\Project Framework\Debug\PT Project.exe
