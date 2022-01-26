@@ -13,6 +13,8 @@ enum ActionType //The actions supported (you can add more if needed)
 	CHNG_DRAW_CLR,	//Change the drawing color
 	CHNG_FILL_CLR,	//Change the filling color
 	CHNG_BK_CLR,	//Change background color
+	CHG_FIG_FILL_COLOR,  //changes the selectesd fig fill color
+	CHG_FIG_DRAW_COLOR,  //changes the selected fig draw color
 	DEL,			//Delete a figure(s)
 	MOVE,			//Move a figure(s)
 	ROTATE,			//Rotate a figure(s)

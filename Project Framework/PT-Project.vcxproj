@@ -140,6 +140,8 @@
     <ClCompile Include="Actions\changeBgColor.cpp" />
     <ClCompile Include="Actions\changeCrntDrawColor.cpp" />
     <ClCompile Include="Actions\changeCurrentFillColor.cpp" />
+    <ClCompile Include="Actions\changeFigDrawColor.cpp" />
+    <ClCompile Include="Actions\changeFigFillColor.cpp" />
     <ClCompile Include="Actions\Delete.cpp" />
     <ClCompile Include="Actions\PickByType.cpp" />
     <ClCompile Include="Actions\Select.cpp" />
@@ -202,6 +204,8 @@
     <ClInclude Include="Actions\changeBgColor.h" />
     <ClInclude Include="Actions\changeCrntDrawColor.h" />
     <ClInclude Include="Actions\changeCurrentFillColor.h" />
+    <ClInclude Include="Actions\changeFigDrawColor.h" />
+    <ClInclude Include="Actions\changeFigFillColor.h" />
     <ClInclude Include="Actions\Delete.h" />
     <ClInclude Include="Actions\PickByType.h" />
     <ClInclude Include="Actions\Select.h" />

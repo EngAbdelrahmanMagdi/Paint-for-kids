@@ -18,7 +18,8 @@
 #include "Actions\changeBgColor.h"
 #include "Actions\ActionResizeFigure.h"
 #include "Actions\PickByType.h"
-
+#include "Actions\changeFigFillColor.h"
+#include "Actions\changeFigDrawColor.h"
 
 
 
@@ -66,8 +67,11 @@ void ApplicationManager::Run()
 //Creates an action
 Action* ApplicationManager::CreateAction(ActionType ActType)
 {
+	
 	Action* newAct = NULL;
 	string answer, answer2;
+	CFigure* aa = NULL;
+	int selectedIndex = getSelectedFigure();
 	//According to Action Type, create the corresponding action object
 	switch (ActType)
 	{
@@ -85,6 +89,12 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 		break;
 	case CHNG_FILL_CLR:
 		newAct = new changeCurrentFillColor(this);
+		break;
+	case CHG_FIG_FILL_COLOR:
+		newAct = new changeFigFillColor(this);
+		break;
+	case CHG_FIG_DRAW_COLOR:
+		newAct = new changeFigDrawColor(this);
 		break;
 	case CHNG_BK_CLR:
 		newAct = new changeBgColor(this);

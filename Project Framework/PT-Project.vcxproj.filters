@@ -61,6 +61,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Actions\ActionResizeFigure.cpp" />
     <ClCompile Include="Actions\PickByType.cpp" />
+    <ClCompile Include="Actions\changeFigFillColor.cpp" />
+    <ClCompile Include="Actions\changeFigDrawColor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\ActionAddEllipse.h" />
@@ -109,6 +111,8 @@
     <ClInclude Include="DEFS.h" />
     <ClInclude Include="Actions\ActionResizeFigure.h" />
     <ClInclude Include="Actions\PickByType.h" />
+    <ClInclude Include="Actions\changeFigFillColor.h" />
+    <ClInclude Include="Actions\changeFigDrawColor.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PT-Project.vcproj" />

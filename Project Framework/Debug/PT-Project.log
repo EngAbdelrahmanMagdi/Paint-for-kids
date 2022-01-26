@@ -1,4 +1,3 @@
 ﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  CFigure.cpp
-ActionAddEllipse.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
-  PT-Project.vcxproj -> E:\Iti Open source\paint-for-kids\Paint-for-kids\Project Framework\Debug\PT Project.exe
+  changeFigDrawColor.cpp
+  PT-Project.vcxproj -> C:\Users\mahmoud\Desktop\PaintFinal\Paint-for-kids\Project Framework\Debug\PT Project.exe

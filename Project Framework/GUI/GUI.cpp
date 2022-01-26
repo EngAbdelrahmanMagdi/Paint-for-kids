@@ -91,6 +91,8 @@ ActionType GUI::MapInputToActionType() const
 			case DRAW_CLR:return CHNG_DRAW_CLR;
 			case FILL_CLR: return CHNG_FILL_CLR;
 			case BG_CHANGE: return CHNG_BK_CLR;
+			case FIG_COLOR: return CHG_FIG_FILL_COLOR;
+			case FIG_BORDER: return CHG_FIG_DRAW_COLOR;
 			case ITM_LOAD: return LOAD;
 			case ITM_SAVE: return SAVE;
 			case ITM_EXIT: return EXIT;
@@ -190,6 +192,8 @@ void GUI::CreateDrawToolBar() const
 	MenuItemImages[DRAW_CLR] = "images\\MenuItems\\st3.jpg";
 	MenuItemImages[FILL_CLR] = "images\\MenuItems\\fillc.jpg";
 	MenuItemImages[BG_CHANGE] = "images\\MenuItems\\bgcolor.jpg";
+	MenuItemImages[FIG_COLOR] = "images\\MenuItems\\FigColor.jpg";
+	MenuItemImages[FIG_BORDER] = "images\\MenuItems\\chgShapeBorder.jpg";
 	MenuItemImages[ITM_Select] = "images\\MenuItems\\Menu_Select.jpg";
 	MenuItemImages[ITM_Delete] = "images\\MenuItems\\DELETE.jpg";
 	MenuItemImages[ITM_Send_Back] = "images\\MenuItems\\sendtoback.jpg";
