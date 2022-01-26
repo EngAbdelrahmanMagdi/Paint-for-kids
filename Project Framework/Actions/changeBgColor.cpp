@@ -32,6 +32,5 @@ void changeBgColor::Execute()
 		case ITM_PURPLE:	pGUI->setBgColor(PURPLE);	break;
 		}
 	}
-	pGUI->ClearDrawArea();
 	pGUI->CreateDrawToolBar();
 }
