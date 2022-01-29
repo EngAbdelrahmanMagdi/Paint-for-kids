@@ -9,12 +9,13 @@ changeFigFillColor::changeFigFillColor(ApplicationManager* pApp) :Action(pApp)
 //Execute the action
 void changeFigFillColor::Execute()
 {
+	Point P1;
 	//Get a Pointer to the Interface
 	GUI* pGUI = pManager->GetGUI();
 	CFigure* selectedFig;
 	selectedFig = pManager->getSelected();
 
-	Point P1;
+	
 	int ClickedItemOrder;
 	
 	//Get the coordinates of the user click

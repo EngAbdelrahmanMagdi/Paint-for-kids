@@ -84,3 +84,7 @@ bool CFigure::HiddenStatus()
 {
 	return PlayHidden;
 }
+GfxInfo CFigure::GetGfxInfo() const
+{
+	return FigGfxInfo;
+}

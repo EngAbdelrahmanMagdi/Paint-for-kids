@@ -63,6 +63,7 @@
     <ClCompile Include="Actions\PickByType.cpp" />
     <ClCompile Include="Actions\changeFigFillColor.cpp" />
     <ClCompile Include="Actions\changeFigDrawColor.cpp" />
+    <ClCompile Include="Actions\ActionPickByFill.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\ActionAddEllipse.h" />
@@ -113,6 +114,7 @@
     <ClInclude Include="Actions\PickByType.h" />
     <ClInclude Include="Actions\changeFigFillColor.h" />
     <ClInclude Include="Actions\changeFigDrawColor.h" />
+    <ClInclude Include="Actions\ActionPickByFill.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PT-Project.vcproj" />

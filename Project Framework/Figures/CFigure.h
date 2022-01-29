@@ -44,6 +44,8 @@ public:
 	void Hide();
 	bool HiddenStatus();
 
+	GfxInfo GetGfxInfo() const;
+
 	//virtual void PrintInfo(Output* pOut) = 0;	//print all figure info on the status bar
 };
 

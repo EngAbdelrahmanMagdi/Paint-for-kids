@@ -133,6 +133,7 @@
     <ClCompile Include="Actions\ActionAddHexagon.cpp" />
     <ClCompile Include="Actions\ActionExit.cpp" />
     <ClCompile Include="Actions\ActionLoad.cpp" />
+    <ClCompile Include="Actions\ActionPickByFill.cpp" />
     <ClCompile Include="Actions\ActionResizeFigure.cpp" />
     <ClCompile Include="Actions\ActionSave.cpp" />
     <ClCompile Include="Actions\ActionSendBack.cpp" />
@@ -197,6 +198,7 @@
     <ClInclude Include="Actions\ActionAddHexagon.h" />
     <ClInclude Include="Actions\ActionExit.h" />
     <ClInclude Include="Actions\ActionLoad.h" />
+    <ClInclude Include="Actions\ActionPickByFill.h" />
     <ClInclude Include="Actions\ActionResizeFigure.h" />
     <ClInclude Include="Actions\ActionSave.h" />
     <ClInclude Include="Actions\ActionSendBack.h" />
