@@ -18,6 +18,7 @@
 #include "Actions\changeBgColor.h"
 #include "Actions\ActionResizeFigure.h"
 #include "Actions\PickByType.h"
+#include "Actions\PickByBoth.h"
 #include "Actions\ActionPickByFill.h"
 #include "Actions\changeFigFillColor.h"
 #include "Actions\changeFigDrawColor.h"
@@ -140,8 +141,12 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 	case P_H_TYPE:
 		newAct = new PickByType(this);
 		break;
+
 	case P_H_FILL:
 		newAct = new PickByFill(this);
+		break;
+	case P_H_BOTH:
+		newAct = new PickByBoth(this);
 		break;
 	case EXIT:	
 		DisplayMessageBox();	

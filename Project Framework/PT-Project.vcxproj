@@ -144,6 +144,7 @@
     <ClCompile Include="Actions\changeFigDrawColor.cpp" />
     <ClCompile Include="Actions\changeFigFillColor.cpp" />
     <ClCompile Include="Actions\Delete.cpp" />
+    <ClCompile Include="Actions\PickByBoth.cpp" />
     <ClCompile Include="Actions\PickByType.cpp" />
     <ClCompile Include="Actions\Select.cpp" />
     <ClCompile Include="Actions\ToDrawAction.cpp" />
@@ -209,6 +210,7 @@
     <ClInclude Include="Actions\changeFigDrawColor.h" />
     <ClInclude Include="Actions\changeFigFillColor.h" />
     <ClInclude Include="Actions\Delete.h" />
+    <ClInclude Include="Actions\PickByBoth.h" />
     <ClInclude Include="Actions\PickByType.h" />
     <ClInclude Include="Actions\Select.h" />
     <ClInclude Include="Actions\ToDrawAction.h" />

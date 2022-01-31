@@ -131,6 +131,7 @@ ActionType GUI::MapInputToActionType() const
 			case ITM_P_H_TYPE:return P_H_TYPE;
 			case ITM_P_H_FILL:return P_H_FILL;
 			case ITM_TO_DRAW:return TO_DRAW;
+			case ITM_P_H_BOTH: return P_H_BOTH;
 			default: return EMPTY;
 
 			}
@@ -255,8 +256,8 @@ void GUI::CreatePlayToolBar() const
 
 	string MenuItemImages2[PLAY_ITM_COUNT];
 	MenuItemImages2[ITM_P_H_TYPE] = "images\\MenuItems\\Pickbyshape.jpg";
-	MenuItemImages2[ITM_P_H_FILL] = "images\\MenuItems\\Pickbyshape.jpg";
-
+	MenuItemImages2[ITM_P_H_FILL] = "images\\MenuItems\\Pickbycolor.jpg";
+	MenuItemImages2[ITM_P_H_BOTH] = "images\\MenuItems\\Pickbyboth.jpg";
 	MenuItemImages2[ITM_TO_DRAW] = "images\\MenuItems\\drawm.jpg";
 
 	//Draw menu item one image at a time

@@ -1,4 +1,7 @@
 ﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  ActionPickByFill.cpp
-C:\Users\mahmoud\Desktop\PaintFinal\Paint-for-kids\Project Framework\Actions\ActionPickByFill.cpp(29): warning C4715: 'PickByFill::AssignColor': not all control paths return a value
-  PT-Project.vcxproj -> C:\Users\mahmoud\Desktop\PaintFinal\Paint-for-kids\Project Framework\Debug\PT Project.exe
+  GUI.cpp
+E:\Iti Open source\data Strusture\VersionX\Paint-for-kids\Project Framework\GUI\GUI.cpp(419,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+E:\Iti Open source\data Strusture\VersionX\Paint-for-kids\Project Framework\GUI\GUI.cpp(425,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\Iti Open source\data Strusture\VersionX\Paint-for-kids\Project Framework\GUI\GUI.cpp(426,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\Iti Open source\data Strusture\VersionX\Paint-for-kids\Project Framework\GUI\GUI.cpp(427,22): warning C4305: '+=': truncation from 'double' to 'float'
+  PT-Project.vcxproj -> E:\Iti Open source\data Strusture\VersionX\Paint-for-kids\Project Framework\Debug\PT Project.exe
