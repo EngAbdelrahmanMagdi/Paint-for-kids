@@ -1,4 +1,48 @@
 ﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  main.cpp
+  GUI.cpp
+E:\Iti Open source\data Strusture\paint for kids\Paint-for-kids\Project Framework\GUI\GUI.cpp(419,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+E:\Iti Open source\data Strusture\paint for kids\Paint-for-kids\Project Framework\GUI\GUI.cpp(425,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\Iti Open source\data Strusture\paint for kids\Paint-for-kids\Project Framework\GUI\GUI.cpp(426,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\Iti Open source\data Strusture\paint for kids\Paint-for-kids\Project Framework\GUI\GUI.cpp(427,22): warning C4305: '+=': truncation from 'double' to 'float'
+  CSquare.cpp
+E:\Iti Open source\data Strusture\paint for kids\Paint-for-kids\Project Framework\Figures\CSquare.cpp(61,20): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  CHexagon.cpp
+E:\Iti Open source\data Strusture\paint for kids\Paint-for-kids\Project Framework\Figures\CHexagon.cpp(13,23): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Iti Open source\data Strusture\paint for kids\Paint-for-kids\Project Framework\Figures\CHexagon.cpp(14,59): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Iti Open source\data Strusture\paint for kids\Paint-for-kids\Project Framework\Figures\CHexagon.cpp(57,23): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Iti Open source\data Strusture\paint for kids\Paint-for-kids\Project Framework\Figures\CHexagon.cpp(58,59): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Iti Open source\data Strusture\paint for kids\Paint-for-kids\Project Framework\Figures\CHexagon.cpp(70,42): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\Iti Open source\data Strusture\paint for kids\Paint-for-kids\Project Framework\Figures\CHexagon.cpp(72,25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+E:\Iti Open source\data Strusture\paint for kids\Paint-for-kids\Project Framework\Figures\CHexagon.cpp(91,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  CFigure.cpp
+  CEllipse.cpp
+E:\Iti Open source\data Strusture\paint for kids\Paint-for-kids\Project Framework\Figures\CEllipse.cpp(67,21): warning C4244: '*=': conversion from 'float' to 'int', possible loss of data
+E:\Iti Open source\data Strusture\paint for kids\Paint-for-kids\Project Framework\Figures\CEllipse.cpp(68,19): warning C4244: '*=': conversion from 'float' to 'int', possible loss of data
+  ApplicationManager.cpp
+  changeFigFillColor.cpp
+  changeFigDrawColor.cpp
+  changeCurrentFillColor.cpp
+  changeCrntDrawColor.cpp
+  changeBgColor.cpp
+  ToPlayAction.cpp
+  ToDrawAction.cpp
+  Select.cpp
+  PickByType.cpp
+  PickByBoth.cpp
+  Delete.cpp
+  ActionSendFront.cpp
+  ActionSendBack.cpp
+  Generating Code...
+E:\Iti Open source\data Strusture\paint for kids\Paint-for-kids\Project Framework\ApplicationManager.cpp(331): warning C4715: 'ApplicationManager::DeleteFigure': not all control paths return a value
+  Compiling...
+  ActionSave.cpp
+  ActionResizeFigure.cpp
   ActionPickByFill.cpp
-C:\Users\mahmoud\Desktop\PaintProject-Final-Version1.0\Paint-for-kids\Project Framework\Actions\ActionPickByFill.cpp(29): warning C4715: 'PickByFill::AssignColor': not all control paths return a value
-  PT-Project.vcxproj -> C:\Users\mahmoud\Desktop\PaintProject-Final-Version1.0\Paint-for-kids\Project Framework\Debug\PT Project.exe
+  ActionLoad.cpp
+  ActionAddSquare.cpp
+  ActionAddHexagon.cpp
+  ActionAddEllipse.cpp
+  Generating Code...
+E:\Iti Open source\data Strusture\paint for kids\Paint-for-kids\Project Framework\Actions\ActionPickByFill.cpp(29): warning C4715: 'PickByFill::AssignColor': not all control paths return a value
+  PT-Project.vcxproj -> E:\Iti Open source\data Strusture\paint for kids\Paint-for-kids\Project Framework\Debug\PT Project.exe

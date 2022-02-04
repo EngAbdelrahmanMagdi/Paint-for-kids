@@ -34,12 +34,12 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 //TODO: Add more items names here
 	ITM_SAVE,//save item
 	ITM_LOAD,//load a graph
-	ITM_TO_PLAY,
+	
 	ITM_RESIZE_QUARTER,
 	ITM_RESIZE_HALF,
 	ITM_RESIZE_DOUBLED,
 	ITM_RESIZE_QUADRUPLE,
-	
+	ITM_TO_PLAY,
 	ITM_EXIT,		//Exit item
 
 	DRAW_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
