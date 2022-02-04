@@ -200,8 +200,8 @@ void GUI::CreateDrawToolBar() const
 	MenuItemImages[ITM_Delete] = "images\\MenuItems\\DELETE.jpg";
 	MenuItemImages[ITM_Send_Back] = "images\\MenuItems\\sendtoback.jpg";
 	MenuItemImages[ITM_Send_Front] = "images\\MenuItems\\bringtofront.jpg";
-	MenuItemImages[ITM_SAVE] = "images\\MenuItems\\Menu_save.jpg";
-	MenuItemImages[ITM_LOAD] = "images\\MenuItems\\Menu_Load.jpg";
+	MenuItemImages[ITM_SAVE] = "images\\MenuItems\\SAVE.jpg";
+	MenuItemImages[ITM_LOAD] = "images\\MenuItems\\LOAD.jpg";
 	MenuItemImages[ITM_TO_PLAY] = "images\\MenuItems\\playm.jpg";
 	MenuItemImages[ITM_RESIZE_QUARTER] = "images\\MenuItems\\onefourth.jpg";
 	MenuItemImages[ITM_RESIZE_HALF] = "images\\MenuItems\\half.jpg";
@@ -258,7 +258,7 @@ void GUI::CreatePlayToolBar() const
 	MenuItemImages2[ITM_P_H_TYPE] = "images\\MenuItems\\Pickbyshape.jpg";
 	MenuItemImages2[ITM_P_H_FILL] = "images\\MenuItems\\Pickbycolor.jpg";
 	MenuItemImages2[ITM_P_H_BOTH] = "images\\MenuItems\\Pickbyboth.jpg";
-	MenuItemImages2[ITM_TO_DRAW] = "images\\MenuItems\\drawm.jpg";
+	MenuItemImages2[ITM_TO_DRAW] = "images\\MenuItems\\drawcolor1.jpg";
 
 	//Draw menu item one image at a time
 	for (int i = 0; i < PLAY_ITM_COUNT; i++)
