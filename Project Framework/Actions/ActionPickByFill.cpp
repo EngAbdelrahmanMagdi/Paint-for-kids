@@ -37,15 +37,18 @@ void PickByFill::PrntScore(int S)
 	{
 		rigSel++;
 		message = "Right!, Your score is: " + to_string(rigSel) + " Right, and " + to_string(wrgSel) + " Wrong.";
+		pGUI->PrintMessage(message);
+
 	}
-	else 	if (S == 2)
+	else if (S == 2)
 	{
 		wrgSel++;
 		message = "Wrong!, Your score is: " + to_string(rigSel) + " Right, and " + to_string(wrgSel) + " Wrong.";
+		pGUI->PrintMessage(message);
+
 	}
-	else
-		message = "YOU WIN!, Your score is: " + to_string(rigSel) + " Right, and " + to_string(wrgSel) + " Wrong.";
-	pGUI->PrintMessage(message);
+	//else
+		//message = "YOU WIN!, Your score is: " + to_string(rigSel) + " Right, and " + to_string(wrgSel) + " Wrong.";
 
 
 }
@@ -154,50 +157,7 @@ void PickByFill::Execute()
 
 			}
 		}
-		else
-		{
-			
-				if (Fig->GetGfxInfo().DrawClr == BLACK)
-				{
-					picked_color_no = clrs[0];
-					pGUI->PrintMessage("Pick up figures colored black!");
-				}
-				else if (Fig->GetGfxInfo().DrawClr == WHITE)
-				{
-					picked_color_no = clrs[1];
-					pGUI->PrintMessage("Pick up figures colored white!");
-				}
-				else if (Fig->GetGfxInfo().DrawClr == BLUE)
-				{
-					picked_color_no = clrs[2];
-					pGUI->PrintMessage("Pick up figures colored blue!");
-
-				}
-				else if (Fig->GetGfxInfo().DrawClr == GREEN)
-				{
-					picked_color_no = clrs[3];
-					pGUI->PrintMessage("Pick up figures colored green!");
-
-				}
-				else if (Fig->GetGfxInfo().DrawClr == RED)
-				{
-					picked_color_no = clrs[4];
-					pGUI->PrintMessage("Pick up figures colored red!");
-
-				}
-				else if (Fig->GetGfxInfo().FillClr == PINK)
-				{
-					picked_color_no = clrs[5];
-					pGUI->PrintMessage("Pick up figures colored pink!");
-
-				}
-				else if (Fig->GetGfxInfo().FillClr == PURPLE)
-				{
-					picked_color_no = clrs[6];
-					pGUI->PrintMessage("Pick up figures colored purple!");
-
-				}
-			}
+	
 			
 			
 
@@ -217,17 +177,14 @@ void PickByFill::Execute()
 					if ((!(Fig->GetGfxInfo().isFilled)) && (!(clickedFig->GetGfxInfo().isFilled)))
 					{
 						PrntScore(1);
+						
+
 						clickedFig->Hide();
 						pManager->UpdateInterface();
+						pGUI->ClearDrawArea();
 						picked_color_no--;
 					}
-					else if (clickedFig->GetGfxInfo().DrawClr == AssignColor(Fig))
-					{
-						PrntScore(1);
-						clickedFig->Hide();
-						pManager->UpdateInterface();
-						picked_color_no--;
-					}
+					
 					else if (clickedFig->GetGfxInfo().isFilled && clickedFig->GetGfxInfo().FillClr == AssignColor(Fig))
 					{
 						PrntScore(1);
@@ -248,11 +205,20 @@ void PickByFill::Execute()
 				pGUI->PrintMessage("Toolbar clicked, game aborted.");
 				picked_color_no = -1;
 			}
-
+			
 
 		}
 		if (picked_color_no == 0)
 			PrntScore(3);
+		if (rigSel > wrgSel) {
+				pGUI->PrintMessage("You won!");
+
+		}
+		else {
+			pGUI->PrintMessage("You lost!");
+
+
+		}
 	}
 	else 			pGUI->PrintMessage("You must have at least two or more colors to play pick by color!");
 	for (int i = 0; i < pManager->getFigCount(); i++)

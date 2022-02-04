@@ -30,10 +30,7 @@ void PickByType::PrntScore(int S)
 		wrgSel++;
 		message = "Wrong!, Your score is: " + to_string(rigSel) + " Right, and " + to_string(wrgSel) + " Wrong.";
 	}
-	else
-		message = "YOU WIN!, Your score is: " + to_string(rigSel) + " Right, and " + to_string(wrgSel) + " Wrong.";
-	pGUI->PrintMessage(message);
-
+	
 
 }
 
@@ -144,8 +141,18 @@ void PickByType::Execute()
 
 
 			}
+			
 			if (picked_fig_no == 0)
 				PrntScore(3);
+			if (rigSel > wrgSel) {
+				pGUI->PrintMessage("You won!");
+
+			}
+			else {
+				pGUI->PrintMessage("You lost!");
+
+
+			}
 
 
 

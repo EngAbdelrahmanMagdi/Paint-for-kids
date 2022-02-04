@@ -203,6 +203,8 @@ CFigure* ApplicationManager::GetFigure(int x, int y) const
 		}
 
 	}
+	
+	return NULL;
 
 	///Add your code here to search for a figure given a point x,y	
 

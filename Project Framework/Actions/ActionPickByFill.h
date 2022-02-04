@@ -9,9 +9,9 @@
 class PickByFill :
 	public Action
 {
-	CFigure* Fig;
+	CFigure* Fig = NULL;
 	int  no_colors, rand_fig_no, picked_color_no, wrgSel, rigSel;
-	int clrs[6];
+	int clrs[7];
 	Point P;
 	color AssignColor(CFigure*);
 	void PrntScore(int);

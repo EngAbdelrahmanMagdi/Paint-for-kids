@@ -73,6 +73,7 @@ color CFigure::ColorObject(string ClrStr) const  //Convert from string to color 
 void CFigure::Hide()
 {
 	PlayHidden = true;
+	
 }
 //Shows Figures
 void CFigure::Show()

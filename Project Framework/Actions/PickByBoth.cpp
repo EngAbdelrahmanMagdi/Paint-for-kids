@@ -4,6 +4,7 @@
 #include "..\Figures\CHexagon.h"
 #include "..\Figures\CSquare.h"
 #include "..\GUI\GUI.h"
+#include "..\Actions\Delete.h"
 
 
 
@@ -23,10 +24,7 @@ void PickByBoth::PrntScore(int S)
 		wrgSel++;
 		message = "Wrong!, Your score is: " + to_string(rigSel) + " Right, and " + to_string(wrgSel) + " Wrong.";
 	}
-	else
-		message = "YOU WIN!, Your score is: " + to_string(rigSel) + " Right, and " + to_string(wrgSel) + " Wrong.";
-	pGUI->PrintMessage(message);
-
+	
 
 }
 
@@ -388,8 +386,18 @@ void PickByBoth::Execute()
 			}
 		}
 
+		
 		if (picked_comb_no == 0)
 			PrntScore(3);
+		if (rigSel > wrgSel) {
+			pGUI->PrintMessage("You won!");
+
+		}
+		else {
+			pGUI->PrintMessage("You lost!");
+
+
+		}
 
 	}
 	else pGUI->PrintMessage("You must have at least two or more combinations to play pick by both!");
